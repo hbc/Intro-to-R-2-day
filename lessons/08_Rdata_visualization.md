@@ -212,6 +212,9 @@ ggplot(new_metadata) +
  ![ggscatter5](../img/ggscatter-5.png)
  
 
+> *NOTE:* You can use the `example("geom_point")` function here to explore a multitude of different aesthetics and layers that can be added to your plot. As you scroll through the different plots, take note of how the code is modified. You can use this with any of the different geometric object layers available in ggplot2 to learn how you can easily modify your plots! 
+
+
 ***
 
 **Exercise**
