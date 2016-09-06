@@ -14,28 +14,46 @@ Approximate time: 30 minutes
 
 ## What is R?
 
-R is a programming language and environment for statistical computing and graphics. 
+The common misconception is that R is a programming language but in fact it is much more than that. Think of R as an environment for statistical computing and graphics, which brings together a number of features to provide powerful functionality.
 
-* Based on the statistical computing programming language S.
-* Open source software 
-* Superior (if not just comparable) to commercial alternatives like MATLAB. 
-* Available on all platforms.
+The R environment combines:
+
+* effective handling of big data 
+* collection of integrated tools
+* graphical facilities
+* simple and effective programming language
+
+
 
 ## Why use R?
 
+<img src="../img/why_R.png" width=600>
+
+
+
+R is a powerful, extensible environment. It has a wide range of statistics and general data analysis and visualization capabilities.
+
 * Data handling, manipulation, and storage
-* Huge collection of tools for data analysis (R has over 7,000
-  user contributed packages at this time)
 * Wide array of statistical methods and graphical techniques available
-* Well-developed programming language - not just for statistics, but also general purpose programming.
-* Large and growing community of peers.
+* Easy to install on any platform and use (and it’s free!)
+* Open source with a large and growing community of peers
 
 
 ## What is RStudio?
 
-RStudio is freely available open-source IDE (Integrated Development Environment). RStudio provides an environment with many features to make using R easier and is a great alternative to working on R in the terminal. 
+RStudio is freely available open-source Integrated Development Environment (IDE). RStudio provides an environment with many features to make using R easier and is a great alternative to working on R in the terminal. 
+
+<img src="../img/Rstudio_logo.png" width=300>
+
+* Graphical user interface, not just a command prompt
+* Great learning tool 
+* Free for academic use
+* Program agnostic
+* Open source
+
 
 ## Creating a new project directory in RStudio
+
 Let's create a new project directory for our "Introduction to R" lesson today. 
 
 1. Open RStudio
