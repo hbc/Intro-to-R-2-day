@@ -106,7 +106,12 @@ Suppose we didn't know how to use the `round` function and wanted more significa
 	?round
 
 
-If you know the function, but just need to remind yourself of the names of the arguments, you can use:
+Even more useful is the `example()` function. This will allow you to run the examples section from the Online Help to see exactly how it works when executing the commands. Let's try that for `round()`:
+
+	example("round")
+	
+
+Alternatively, if you are familiar with the function but just need to remind yourself of the names of the arguments, you can use:
 
 	args(round)
 
