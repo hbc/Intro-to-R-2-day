@@ -195,7 +195,7 @@ it with this command:
 
 ## Packages and Libraries
 
-**Packages** are collections of R functions, data, and compiled code in a well-defined format, created to perform specific tasks. 
+**Packages** are collections of R functions, data, and compiled code in a well-defined format, created to add specific functionality. There are 7,000+ user contributed packages and growing.
 
 There are a set of **standard (or base) packages** which are considered part of the R source code and automatically available as part of your R installation. Base packages contain the **basic functions** that allow R to work, and enable standard statistical and graphical functions on datasets; for example, all of the functions that we have been using so far in our examples. 
 
@@ -210,14 +210,25 @@ You can check what packages are loaded in your R session by typing into the cons
 In this workshop we will mostly be using functions from the standard base packages. However, the more you work with R you will come to realize that there is a cornucopia of R packages that offer a wide variety of functionality. To use additional packages will require installation. Many packages can be installed from the [CRAN](http://cran.r-project.org/) or [Bioconductor](https://www.bioconductor.org/) repositories.
 
 ### Package installation from CRAN 
-Packages for R can be installed from the [CRAN](http://cran.r-project.org/) package repository using the `install.packages` function. An example is given below for the `ggplot2` package that will be required for some images we will create later on. Run this code to install `ggplot2`.
+
+CRAN is a repository where the latest downloads of R (and legacy versions) are found in addition to source code for thousands of different user contributed R packages.
+
+<img src="../img/cran_packages.png" width=600>
+
+Packages for R can be installed from the [CRAN](http://cran.r-project.org/) package repository using the `install.packages` function. This function will download the source code from on the CRAN mirrors and install the package (and any dependencies) locally on your computer. 
+
+An example is given below for the `ggplot2` package that will be required for some images we will create later on. Run this code to install `ggplot2`.
 
 
 ```r
 install.packages('ggplot2')
 ```
 ### Package installation from Bioconductor
-Alternatively, packages can also be installed from [Bioconductor](https://www.bioconductor.org/), another repository of packages but mostly pertaining to genomic data analysis. There are many packages that are available in CRAN and Bioconductor, but there are also packages that are specific to one repository. Generally, you can find out this information with a Google search or by trial and error. To install from Bioconductor, you will first need to install Bioconductor and all the standard packages. *This only needs to be done once ever for your R installation.* 
+Alternatively, packages can also be installed from [Bioconductor](https://www.bioconductor.org/), another repository of packages which provides tools for the analysis and comprehension of high-throughput **genomic data**. These packages includes (but is not limited to) tools for performing statistical analysis, annotation packages, and accessing public datasets.
+
+<img src="../img/bioconductor_logo.png" width=300>
+
+There are many packages that are available in CRAN and Bioconductor, but there are also packages that are specific to one repository. Generally, you can find out this information with a Google search or by trial and error. To install from Bioconductor, you will first need to install Bioconductor and all the standard packages. *This only needs to be done once ever for your R installation.* 
 
 **If you were successful with the installation from CRAN, you do not need to run this**
 
