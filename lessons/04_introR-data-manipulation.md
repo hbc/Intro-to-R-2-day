@@ -207,7 +207,7 @@ We briefly introduced factors in the last lesson, but factors only become more i
 	
 	Factor w/ 3 levels "high","low","medium": 2 1 3 1 2 3 1
 
-The unique elements are referred to as "factor levels", and we can use the function `levels()` to idenitfy the different categories/levels for a factor:  
+The unique elements are referred to as "factor levels", and we can use the function `levels()` to identify the different categories/levels for a factor:  
 
 	levels(expression)
 
