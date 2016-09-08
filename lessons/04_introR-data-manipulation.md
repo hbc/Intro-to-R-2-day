@@ -201,57 +201,45 @@ Notice that we get the same results regardless of whether or not we use the `whi
 
 ### Factors
 
-We briefly introduced factors in the last lesson, but factors only become more intuitive once you've had a chance to work with them. The elements of the `expression` factor created previously had the following categories or levels: low, medium, and high. The categories were assigned integers alphabetically, with high=1, low=2, medium=3 . To view the integer assignments under the hood you can use `str`:
+We briefly introduced factors in the last lesson, but factors only become more intuitive once you've had a chance to work with them. The elements of the expression factor created previously had the following categories or levels: low, medium, and high. The categories were assigned integers alphabetically, with high=1, low=2, medium=3 . To view the integer assignments under the hood you can use str:
 
 	str(expression)
-	
 	Factor w/ 3 levels "high","low","medium": 2 1 3 1 2 3 1
 
-The unique elements are referred to as "factor levels", and we can use the function `levels()` to identify the different categories/levels for a factor:  
+The unique elements are referred to as "factor levels".
 
-	levels(expression)
+In the example above, the factor has levels but it is unordered. You can check this by trying the following:
 
-With the establishment of defined levels, we can then use the `summary()` function to classify and count the elements for each level: 
+	min(expression) # check what is the smallest level
 
-	summary(expression)
+This doesn't work!
 
-Factors can be ordered or unordered. Sometimes, the order of the factors does not matter, other times you might want to specify the order because it is meaningful (e.g., "low" < "medium" < "high") or it is required by particular type of analysis. 
+To order factor levels, you can simply add an argument to the function ordered=TRUE:
 
-In the example above, the factor is unordered. You can check this by trying the following:
+	expression <- factor(expression, ordered=TRUE)
+	
+	str(expression)
+	Ord.factor w/ 3 levels "low"<"high"<..: 1 3 2 3 1 2 3
 
-	min(expression) # doesn't work!
+	min(expression) # check what is the smallest level
 
-To order factor levels, you can simply add an argument to the function `ordered=TRUE`:
+You'll find that by default R will order levels by alphabetical order. In order to get the desired ordering (i.e. "low" < "medium" < "high") we need to specify the order of levels and add the argument ordered=TRUE.
 
-```{r}	
-expression <- factor(expression, ordered=TRUE)
-expression
-[1] low    high   medium high   low    medium high  
-Levels: high < low < medium
-levels(expression)
-min(expression)
-```
-
-But what you'll find is that by default R will order levels by alphabetical order. In order to get the desired ordering (i.e. "low" < "medium" < "high") we need to specify the order of levels and add the argument `ordered=TRUE`.
-
-```{r}
-expression <- factor(expression, levels=c("low", "medium", "high"), ordered=TRUE)
-levels(expression)
-min(expression) ## works!
-```
-Since factors are special vectors, the same rules for selecting values using indices apply. Let's extract the values of the factor with `high` expression:
+	expression <- factor(expression, levels=c("low", "medium", "high"), ordered=TRUE)
+	
+	str(expression)
+	
+	min(expression) 
+	
+Since factors are special vectors, the same rules for selecting values using indices apply. Let's extract the values of the factor with high expression:
 
 First, we create a logical vector of TRUE and FALSE values:
 
-```{r}
-idx <- expression == "high"
-```
+	idx <- expression == "high"
 
-Then, we use the brackets `[ ]` to extract the TRUE values from the dataset:
+Then, we use the brackets [ ] to extract the TRUE values from the dataset:
 
-```{r}
-expression[idx]
-```
+	expression[idx]
  
 ***
 **Exercise**
