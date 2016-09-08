@@ -223,10 +223,14 @@ In the example above, the factor is unordered. You can check this by trying the 
 
 To order factor levels, you can simply add an argument to the function `ordered=TRUE`:
 
-	factor(expression, ordered=TRUE)
-	
-	[1] low    high   medium high   low    medium high  
-	Levels: high < low < medium
+```{r}	
+expression <- factor(expression, ordered=TRUE)
+expression
+[1] low    high   medium high   low    medium high  
+Levels: high < low < medium
+levels(expression)
+min(expression)
+```
 
 But what you'll find is that by default R will order levels by alpahabetical order. In order to get the desired ordering (i.e. "low" < "medium" < "high") we need to specify the order of levels and add the argument `ordered=TRUE`.
 
