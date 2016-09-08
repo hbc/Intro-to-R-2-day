@@ -232,7 +232,7 @@ levels(expression)
 min(expression)
 ```
 
-But what you'll find is that by default R will order levels by alpahabetical order. In order to get the desired ordering (i.e. "low" < "medium" < "high") we need to specify the order of levels and add the argument `ordered=TRUE`.
+But what you'll find is that by default R will order levels by alphabetical order. In order to get the desired ordering (i.e. "low" < "medium" < "high") we need to specify the order of levels and add the argument `ordered=TRUE`.
 
 ```{r}
 expression <- factor(expression, levels=c("low", "medium", "high"), ordered=TRUE)
