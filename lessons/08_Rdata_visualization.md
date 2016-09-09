@@ -91,7 +91,7 @@ legend("topleft", pch="*", col=c("blue", "green"), c("A", "B"), cex=0.8,
 
 ***
 
-## Barplot
+### Barplot
 Barplots are useful for comparing the distribution of a quantitative variable (numeric) between groups or categories. A **barplot**  would be much more useful to compare the samplemeans (numeric variable) for each sample. We can use `barplot` to draw a single bar representing each sample and the height indicates the average expression level. 
 
 
@@ -128,7 +128,7 @@ barplot(samplemeans, names.arg=c(1:12), horiz=TRUE)
 
  ![bar-4](../img/unnamed-chunk-13-1.png) 
 
-## Histogram
+### Histogram
 If we are interested in an overall distribution of numerical data, a **histogram** is a plot very commonly used. It plots the frequencies that data appears within certain ranges. To plot a histogram of the data use the `hist` command:
 
 
@@ -156,7 +156,7 @@ hist(samplemeans, xlab="Mean expression level", main="", col="darkgrey", border=
 
  ![hist-3](../img/unnamed-chunk-15-1.png) 
 
-##Boxplot
+### Boxplot
 
 Using addiitonal sample information from our metadata, we can use plots to compare values between different factor levels or categories. For example, we can compare the sample means across celltypes 'typeA' and 'typeB' using a **boxplot**.
 
