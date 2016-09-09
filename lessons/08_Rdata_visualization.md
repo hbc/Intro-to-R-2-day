@@ -167,7 +167,7 @@ Outliers are determined using the interquartile range (IQR), which is defined as
 
 ```r
 # Boxplot
-boxplot(samplemeans~celltype, df)
+boxplot(samplemeans~celltype, new_metadata)
 ```
 
  ![box-1](../img/boxplot-1.png) 
