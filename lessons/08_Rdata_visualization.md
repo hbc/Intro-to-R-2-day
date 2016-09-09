@@ -99,7 +99,7 @@ Barplots are useful for comparing the distribution of a quantitative variable (n
 barplot(samplemeans)
 ```
 
- ![bar-1](../figure/unnamed-chunk-10-1.png) 
+ ![bar-1](../img/unnamed-chunk-10-1.png) 
 
 The sample names appear to be too large for the plot, we can change that by changing the `cex.names` value. 
 
@@ -108,7 +108,7 @@ The sample names appear to be too large for the plot, we can change that by chan
 barplot(samplemeans, cex.names=0.5)
 ```
 
- ![bar-2](../figure/unnamed-chunk-11-1.png) 
+ ![bar-2](../img/unnamed-chunk-11-1.png) 
 
 The names are too small to read. Alternatively, we can also just change the names to be numeric values and keep the same size.
 
@@ -117,7 +117,7 @@ The names are too small to read. Alternatively, we can also just change the name
 barplot(samplemeans, names.arg=c(1:12)) # supply numbers as labels
 ```
 
- ![bar-3](../figure/unnamed-chunk-12-1.png) 
+ ![bar-3](../img/unnamed-chunk-12-1.png) 
 
 We can also flip the axes so that the plot is projected horizontally.
 
@@ -126,7 +126,7 @@ We can also flip the axes so that the plot is projected horizontally.
 barplot(samplemeans, names.arg=c(1:12), horiz=TRUE) 
 ```
 
- ![bar-4](../figure/unnamed-chunk-13-1.png) 
+ ![bar-4](../img/unnamed-chunk-13-1.png) 
 
 ## Histogram
 If we are interested in an overall distribution of numerical data, a **histogram** is a plot very commonly used. It plots the frequencies that data appears within certain ranges. To plot a histogram of the data use the `hist` command:
@@ -136,7 +136,7 @@ If we are interested in an overall distribution of numerical data, a **histogram
 hist(samplemeans)
 ```
 
- ![hist-1](../figure/unnamed-chunk-14-1.png) 
+ ![hist-1](../img/unnamed-chunk-14-1.png) 
 
 The range of values for sample means is 9 to 16. As you can see R will automatically calculate the intervals to use. There are many options to determine how to break up the intervals. Let's increase the number of breaks to see how that changes the plot:
 
@@ -145,7 +145,7 @@ The range of values for sample means is 9 to 16. As you can see R will automatic
 hist(samplemeans, xlab="Mean expression level", main="", breaks=20) 
 ```
 
- ![hist-2](../figure/hist-1.png) 
+ ![hist-2](../img/hist-1.png) 
 
 Similar to the other plots we can tweak the aesthetics. Let's color in the bar and remove the borders:
 
@@ -154,7 +154,7 @@ Similar to the other plots we can tweak the aesthetics. Let's color in the bar a
 hist(samplemeans, xlab="Mean expression level", main="", col="darkgrey", border=FALSE) 
 ```
 
- ![hist-3](../figure/unnamed-chunk-15-1.png) 
+ ![hist-3](../img/unnamed-chunk-15-1.png) 
 
 ##Boxplot
 
@@ -170,7 +170,7 @@ Outliers are determined using the interquartile range (IQR), which is defined as
 boxplot(samplemeans~celltype, df)
 ```
 
- ![box-1](../figure/boxplot-1.png) 
+ ![box-1](../img/boxplot-1.png) 
 
 ## Advanced figures (`ggplot2`)
 
