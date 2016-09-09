@@ -91,7 +91,86 @@ legend("topleft", pch="*", col=c("blue", "green"), c("A", "B"), cex=0.8,
 
 ***
 
+## Barplot
+Barplots are useful for comparing the distribution of a quantitative variable (numeric) between groups or categories. A **barplot**  would be much more useful to compare the samplemeans (numeric variable) for each sample. We can use `barplot` to draw a single bar representing each sample and the height indicates the average expression level. 
 
+
+```r
+barplot(samplemeans)
+```
+
+ ![bar-1](../figure/unnamed-chunk-10-1.png) 
+
+The sample names appear to be too large for the plot, we can change that by changing the `cex.names` value. 
+
+
+```r
+barplot(samplemeans, cex.names=0.5)
+```
+
+ ![bar-2](../figure/unnamed-chunk-11-1.png) 
+
+The names are too small to read. Alternatively, we can also just change the names to be numeric values and keep the same size.
+
+
+```r
+barplot(samplemeans, names.arg=c(1:12)) # supply numbers as labels
+```
+
+ ![bar-3](../figure/unnamed-chunk-12-1.png) 
+
+We can also flip the axes so that the plot is projected horizontally.
+
+
+```r
+barplot(samplemeans, names.arg=c(1:12), horiz=TRUE) 
+```
+
+ ![bar-4](../figure/unnamed-chunk-13-1.png) 
+
+## Histogram
+If we are interested in an overall distribution of numerical data, a **histogram** is a plot very commonly used. It plots the frequencies that data appears within certain ranges. To plot a histogram of the data use the `hist` command:
+
+
+```r
+hist(samplemeans)
+```
+
+ ![hist-1](../figure/unnamed-chunk-14-1.png) 
+
+The range of values for sample means is 9 to 16. As you can see R will automatically calculate the intervals to use. There are many options to determine how to break up the intervals. Let's increase the number of breaks to see how that changes the plot:
+
+
+```r
+hist(samplemeans, xlab="Mean expression level", main="", breaks=20) 
+```
+
+ ![hist-2](../figure/hist-1.png) 
+
+Similar to the other plots we can tweak the aesthetics. Let's color in the bar and remove the borders:
+
+
+```r
+hist(samplemeans, xlab="Mean expression level", main="", col="darkgrey", border=FALSE) 
+```
+
+ ![hist-3](../figure/unnamed-chunk-15-1.png) 
+
+##Boxplot
+
+Using addiitonal sample information from our metadata, we can use plots to compare values between different factor levels or categories. For example, we can compare the sample means across celltypes 'typeA' and 'typeB' using a **boxplot**.
+
+A boxplot provides a graphical view of the distribution of data based on a five number summary. The top and bottom of the box represent the (1) first and (2) third quartiles (25th and 75th percentiles, respectively). The line inside the box represents the (3) median (50th percentile). The whiskers extending above and below the box represent the (4) maximum, and (5) minimum of a data set. The whiskers of the plot reach the minimum and maximum values that are not outliers. 
+
+Outliers are determined using the interquartile range (IQR), which is defined as: Q3 - Q1. Any values that exceeds 1.5 x IQR below Q1 or above Q3 are considered outliers and are represented as points above or below the whiskers. These outliers are useful to identify any unexpected observations.
+
+
+```r
+# Boxplot
+boxplot(samplemeans~celltype, df)
+```
+
+ ![box-1](../figure/boxplot-1.png) 
 
 ## Advanced figures (`ggplot2`)
 
