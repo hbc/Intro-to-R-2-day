@@ -129,8 +129,7 @@ barplot(samplemeans, names.arg=c(1:12), horiz=TRUE)
  ![bar-4](../img/unnamed-chunk-13-1.png) 
 
 ### Histogram
-If we are interested in an overall distribution of numerical data, a **histogram** is a plot very commonly used. It plots the frequencies that data appears within certain ranges. To plot a histogram of the data use the `hist` command:
-
+If we are interested in an overall distribution of numerical data, a **histogram** is what we'd want. To plot a histogram of the data use the `hist` command:
 
 ```r
 hist(samplemeans)
@@ -139,7 +138,6 @@ hist(samplemeans)
  ![hist-1](../img/unnamed-chunk-14-1.png) 
 
 The range of values for sample means is 9 to 16. As you can see R will automatically calculate the intervals to use. There are many options to determine how to break up the intervals. Let's increase the number of breaks to see how that changes the plot:
-
 
 ```r
 hist(samplemeans, xlab="Mean expression level", main="", breaks=20) 
@@ -164,10 +162,9 @@ A boxplot provides a graphical view of the distribution of data based on a five 
 
 Outliers are determined using the interquartile range (IQR), which is defined as: Q3 - Q1. Any values that exceeds 1.5 x IQR below Q1 or above Q3 are considered outliers and are represented as points above or below the whiskers. These outliers are useful to identify any unexpected observations.
 
-
 ```r
 # Boxplot
-boxplot(samplemeans~celltype, new_metadata)
+boxplot(samplemeans~celltype, data=new_metadata)
 ```
 
  ![box-1](../img/boxplot-1.png) 
@@ -175,7 +172,7 @@ boxplot(samplemeans~celltype, new_metadata)
 ## Advanced figures (`ggplot2`)
 
 
-More recently, R users have moved away from base graphic options and towards a plotting package called [`ggplot2`](http://docs.ggplot2.org/). This package adds a lot of functionality to the basic plots described above. The syntax takes some getting used to, but once you have it you will find it's extremely powerful and flexible. We can start by re-creating the scatterplot but using ggplot functions to get a feel for the syntax.
+More recently, R users have moved away from base graphic options towards a plotting package called [`ggplot2`](http://docs.ggplot2.org/). This package adds a lot of functionality to the basic plots described above. The syntax takes some getting used to, but once you have it you will find it's extremely powerful and flexible. We can start by re-creating the scatterplot but using ggplot functions to get a feel for the syntax.
 
 `ggplot2` is best used on data in the `data.frame` form, so we will will continue to work with `new_metadata` for the following figures. Let's start by loading the `ggplot2` library.
 
