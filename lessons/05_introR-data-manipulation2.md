@@ -89,6 +89,15 @@ Or we could find the indexes for the metadata replicates 2 and 3:
 	idx <- which(metadata$replicate > 1)
 	
 	metadata[idx, ]
+
+***
+
+**Exercises**  
+
+1. Return a logical vector representing whether the values of `genotype` equal `KO`. Use the logical vector to subset the `metadata` dataframe to return only the rows of data with a genotype of `KO`.
+	
+2. Return a vector of indices representing those values of `genotype` equal to `KO`. Use the vector of indices to subset the `metadata` dataframe to return only the rows of data with a genotype of `KO`.
+	
 ***
 
 #### Indexing dataframes with logical vectors using `subset()` function
@@ -162,7 +171,7 @@ You can also do the same for dataframes and matrices, although with larger datas
 
 ***
 
-**Exercise**  
+**Exercises**  
 
 Let's practice inspecting lists. Create a list named `random` with the following components: `metadata`, `age`, `list1`, `samplegroup`, and `number`.
 
