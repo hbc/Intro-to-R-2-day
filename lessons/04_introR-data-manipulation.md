@@ -201,37 +201,9 @@ Notice that we get the same results regardless of whether or not we use the `whi
 
 ### Factors
 
-We briefly introduced factors in the last lesson, but factors only become more intuitive once you've had a chance to work with them. The elements of the expression factor created previously had the following categories or levels: low, medium, and high. The categories were assigned integers alphabetically, with high=1, low=2, medium=3 . To view the integer assignments under the hood you can use str:
+Since factors are special vectors, the same rules for selecting values using indices apply. We briefly introduced factors in the last lesson, but factors only become more intuitive once you've had a chance to work with them. The elements of the expression factor created previously had the following categories or levels: low, medium, and high. 
 
-	str(expression)
-	Factor w/ 3 levels "high","low","medium": 2 1 3 1 2 3 1
-
-The unique elements are referred to as "factor levels".
-
-In the example above, the factor has levels but it is unordered. You can check this by trying the following:
-
-	min(expression) # check what is the smallest level
-
-This doesn't work!
-
-To order factor levels, you can simply add an argument to the function ordered=TRUE:
-
-	expression <- factor(expression, ordered=TRUE)
-	
-	str(expression)
-	Ord.factor w/ 3 levels "low"<"high"<..: 1 3 2 3 1 2 3
-
-	min(expression) # check what is the smallest level
-
-You'll find that by default R will order levels by alphabetical order. In order to get the desired ordering (i.e. "low" < "medium" < "high") we need to specify the order of levels and add the argument ordered=TRUE.
-
-	expression <- factor(expression, levels=c("low", "medium", "high"), ordered=TRUE)
-	
-	str(expression)
-	
-	min(expression) 
-	
-Since factors are special vectors, the same rules for selecting values using indices apply. Let's extract the values of the factor with high expression:
+Let's extract the values of the factor with high expression:
 
 First, we create a logical vector of TRUE and FALSE values:
 
@@ -240,12 +212,38 @@ First, we create a logical vector of TRUE and FALSE values:
 Then, we use the brackets [ ] to extract the TRUE values from the dataset:
 
 	expression[idx]
- 
+	
+#### Releveling factors
+
+Let's take a slight detour and learn about how to order and relevel categories in a factor. As we learned earlier, the categories in the `expression` factor were assigned integers alphabetically, with high=1, low=2, medium=3. To view the integer assignments under the hood you can use str:
+
+	str(expression)
+	Factor w/ 3 levels "high","low","medium": 2 1 3 1 2 3 1
+
+The unique elements are referred to as "factor levels".
+
+In the example above, the factor has levels but it is unordered, i.e. there is no notation to say that high is greater than medium etc. In fact, the high category is the middle category because of alphabetical order. 
+
+To order factor levels, you can add an argument to the `factor()` function, ordered=TRUE:
+
+	expression <- factor(expression, ordered=TRUE)    ## Note that the `factor()` function is used to create a factor, & to modify the characteristics of an existing factor
+	
+	str(expression)
+	Ord.factor w/ 3 levels "low"<"high"<..: 1 3 2 3 1 2 3
+
+Now the output of the `str()` function states that this is an "Ord.factor", and there are "<" signs to denote that low is the lowest category. 
+
+However, the order of categories is still incorrect, because R is ordering them alphabetically. R does not consider the meaning of the words here, so we have to coerce the proper ordering (i.e. "low" < "medium" < "high") using the `factor()` function once again.
+
+	expression <- factor(expression, levels=c("low", "medium", "high"), ordered=TRUE)    
+	
+	str(expression)
+
 ***
 **Exercise**
 
-1. Use the `samplegroup` vector we created in a previous lesson, and change that to an ordered factor such that KO < CTL < OE. 
-2. Extract only the elements in `samplegroup` that are not KO.
+1. Extract only the elements in `samplegroup` that are not KO.
+2. Use the `samplegroup` vector we created in a previous lesson, and change that to an ordered factor such that KO < CTL < OE. 
 
 ***
 
