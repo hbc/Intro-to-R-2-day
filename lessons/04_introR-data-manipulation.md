@@ -201,7 +201,7 @@ Notice that we get the same results regardless of whether or not we use the `whi
 
 ### Factors
 
-Since factors are special vectors, the same rules for selecting values using indices apply. We briefly introduced factors in the last lesson, but factors only become more intuitive once you've had a chance to work with them. The elements of the expression factor created previously had the following categories or levels: low, medium, and high. 
+Since factors are special vectors, the same rules for selecting values using indices apply. The elements of the expression factor created previously had the following categories or levels: low, medium, and high. 
 
 Let's extract the values of the factor with high expression:
 
@@ -215,7 +215,7 @@ Then, we use the brackets [ ] to extract the TRUE values from the dataset:
 	
 #### Releveling factors
 
-Let's take a slight detour and learn about how to order and relevel categories in a factor. As we learned earlier, the categories in the `expression` factor were assigned integers alphabetically, with high=1, low=2, medium=3. To view the integer assignments under the hood you can use str:
+We have briefly talked about factors, but this data type only becomes more intuitive once you've had a chance to work with it.  Let's take a slight detour and learn about how to order and relevel categories within a factor. As we learned earlier, the categories in the `expression` factor were assigned integers alphabetically, with high=1, low=2, medium=3. To view the integer assignments under the hood you can use str:
 
 	str(expression)
 	Factor w/ 3 levels "high","low","medium": 2 1 3 1 2 3 1
