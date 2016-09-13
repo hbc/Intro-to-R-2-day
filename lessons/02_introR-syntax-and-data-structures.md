@@ -166,7 +166,7 @@ For example, if you were to try to create the following vector:
 
 R will coerce it into:
 
-![vector](../img/vector4.png)
+<img src="../img/vector4.png" width=400>
 
 The analogy for a vector is that your bucket now has different compartments; these compartments in a vector are called *elements*. 
 
