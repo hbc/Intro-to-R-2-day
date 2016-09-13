@@ -295,7 +295,7 @@ Similar to reading in data, there are a wide variety of functions available allo
 >
 
 ```r
-write(glengths, "genome_lengths.txt", ncolumns=1)
+write(glengths, file="genome_lengths.txt", ncolumns=1)
 ```
 >
 
