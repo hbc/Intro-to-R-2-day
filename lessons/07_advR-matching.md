@@ -44,13 +44,13 @@ Although lacking in [documentation](http://dr-k-lo.blogspot.com/2013/11/in-in-r-
 
 It will take a vector as input to the left and will **evaluate each element to see if there is a match in the vector that follows on the right of the operator.** *The two vectors do not have to be the same size.* This operation will return a vector of the same length as vector1 containing logical values to indicate whether or not there was a match. Take a look at the example below:
 
+```r
+A <- c(1,3,5,7,9,11)   # odd numbers
+B <- c(2,4,6,8,10,12)  # even numbers
 
-	A <- c(1,3,5,7,9,11)   # odd numbers
-	B <- c(2,4,6,8,10,12)  # even numbers
-
-	# test to see if any of A are in B	
-	A %in% B
-
+# test to see if any of A are in B	
+A %in% B
+```
 
 ```
 ## [1] FALSE FALSE FALSE FALSE FALSE FALSE
