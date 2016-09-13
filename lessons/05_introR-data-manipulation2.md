@@ -31,9 +31,10 @@ If you were selecting specific columns from the data frame - the rows are left b
 	
 Just like with vectors, you can select multiple rows and columns at a time. Within the square brackets, you need to provide a vector of the desired values:	
 
-	metadata[ ,1:2] # dataframe containing first two columns
-	metadata[c(1,3,6), ] # dataframe containing first, third and seventh rows
-
+```r
+metadata[ ,1:2] # dataframe containing first two columns
+metadata[c(1,3,6), ] # dataframe containing first, third and seventh rows
+```
 
 For larger datasets, it can be tricky to remember the column number that corresponds to a particular variable. (Is celltype in column 1
 or 2? oh, right... they are in column 1). In some cases, the column number for a variable can change if the script you are using adds or removes
@@ -41,19 +42,20 @@ columns. It's therefore often better to use column names to refer to a particula
 
 You can do operations on a particular column, by selecting it using the `$` sign. In this case, the entire column is a vector. For instance, to extract all the gentotypes from our dataset, we can use: 
 
-	metadata$genotype 
-
+```r
+metadata$genotype 
+```
 You can use `names(metadata)` or `colnames(metadata)` to remind yourself of the column names. We can then supply index values to select specific values from that vector. For example, if we wanted the genotype information for the first five samples in `metadata`:
 
 	metadata$genotype[1:5]
 
 The `$` allows you to select a single column by name. To select multiple columns by name, you need to  concatenate a vector of strings that correspond to column names: 
 
-```
+```r
 metadata[, c("genotype", "celltype")]
 ```
 
-```
+```r
           genotype celltype
 sample1        Wt    typeA
 sample2        Wt    typeA
@@ -69,7 +71,7 @@ sample11       KO    typeB
 sample12       KO    typeB
 ```
 
-You can use similar syntax to select specific rows using row names:
+While there is no equivalent `$` syntax to select a row by name, you can select specific rows using the row names:
 
 ```r
 metadata[c("sample10", "sample12"),]
@@ -110,9 +112,9 @@ Or we could find the indexes for the metadata replicates 2 and 3:
 
 Another way of partitioning **dataframes** is using the `subset()` function to return the rows of the dataframe for which the logical expression is TRUE. Allowing us to the subset the data in a single step. For example, we can look at the samples of a specific celltype "typeA":
 
-
-	subset(metadata, celltype == "typeA")
-
+```r
+subset(metadata, celltype == "typeA")
+```
 
 ```
          genotype celltype replicate
