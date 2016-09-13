@@ -59,7 +59,7 @@ A %in% B
 ## [1] FALSE FALSE FALSE FALSE FALSE FALSE
 ```
 
-Since vector A contains only odd numbers and vector B contains only even numbers, there is no overlap and so the vector returned contains a `FALSE` for each element. Let's change a couple of numbers inside vector B to match vector A.
+Since vector A contains only odd numbers and vector B contains only even numbers, there is no overlap and so the vector returned contains a `FALSE` for each element. Let's change a couple of numbers inside vector B to match vector A:
 
 
 ```r
@@ -74,9 +74,9 @@ A %in% B
 ## [1]  TRUE FALSE  TRUE FALSE FALSE FALSE
 ```
 
-The logical vector returned denotes which elements are matching and which are not.  
+The logical vector returned denotes which elements in `A` are also in `B` and which are not.  
 
-Previously, we saw that we could use logical vectors to subset data by returning only the values corresponding to `TRUE`. Therefore, we can use the output logical vector to subset our data, and return only those elements in `A`, which are also in `B` by returning only the TRUE values:
+We saw previously that we could use the output from a logical expression to subset data by returning only the values corresponding to `TRUE`. Therefore, we can use the output logical vector to subset our data, and return only those elements in `A`, which are also in `B` by returning only the TRUE values:
 
 ```r
 
