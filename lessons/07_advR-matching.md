@@ -70,7 +70,25 @@ A %in% B
 ## [1]  TRUE FALSE  TRUE FALSE FALSE FALSE
 ```
 
-The logical vector returned tells us which elements are matching and which are not.  In this example the vectors are small and so it's easy to count by eye; but when we work with large datasets this is not practical. A quick way to assess whether or not we had any matches would be to use the `any` function to see if **any of the values contained in vector A are also in vector B**:
+The logical vector returned tells us which elements are matching and which are not.  
+
+Previously, we saw that we could use logical vectors to subset data by returning only the values corresponding to `TRUE`. Therefore, we can use the output logical vector to subset our data, and return only those elements in `A`, which are also in `B` by returning only the TRUE values:
+
+***Images of A and B with values inside boxes, indices below the boxes***
+
+```r
+
+idx <- A %in% B
+idx
+
+***Images of A and idx with values inside boxes, indices below the boxes***
+
+A[idx]
+
+***Image of A[idx] with values inside boxes, indices below the boxes***
+```
+
+In these previous examples, the vectors were small and so it's easy to count by eye; but when we work with large datasets this is not practical. A quick way to assess whether or not we had any matches would be to use the `any` function to see if **any of the values contained in vector A are also in vector B**:
 
 	any(A %in% B)
 
