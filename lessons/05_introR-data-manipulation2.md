@@ -123,7 +123,13 @@ metadata[idx, ]
 
 #### Indexing dataframes with logical vectors using `subset()` function
 
-Another way of partitioning **dataframes** is using the `subset()` function to return the rows of the dataframe for which the logical expression is TRUE. Allowing us to the subset the data in a single step. For example, we can look at the samples of a specific celltype "typeA":
+Another way of partitioning **dataframes** is using the `subset()` function to return the rows of the dataframe for which the logical expression is TRUE. Allowing us to the subset the data in a single step. The syntax for the `subset()` function is:
+
+```r
+subset(dataframe, column_name == "value", select = "name of column(s) to return")
+```
+
+For example, we can look at the samples of a specific celltype "typeA":
 
 ```r
 subset(metadata, celltype == "typeA")
