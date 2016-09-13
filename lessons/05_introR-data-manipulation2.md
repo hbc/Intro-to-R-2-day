@@ -69,6 +69,12 @@ sample11       KO    typeB
 sample12       KO    typeB
 ```
 
+You can use similar syntax to select specific rows using row names:
+
+```r
+metadata[c("sample10", "sample12"),]
+```
+
 #### Selecting using indexes with logical operators
 
 With dataframes, similar to vectors, we can use logical vectors for specific columns in the dataframe to select only the rows in a dataframe with TRUE values at the same position or index as in the logical vector. We can then use the logical vector to return all of the rows in a dataframe where those values are TRUE.
