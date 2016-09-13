@@ -124,8 +124,8 @@ all(A == B)
 Let's try this on our data and see whether we have metadata information for all samples in our expression data. We'll start by creating two vectors; one with the `rownames` of the metadata and `colnames` of the RPKM data. These are base functions in R which allow you to extract the row and column names as a vector:
 
 ```r
-	x <- rownames(metadata)
-	y <- colnames(rpkm_data)
+x <- rownames(metadata)
+y <- colnames(rpkm_data)
 ```
 
 Now check to see that all of `x` are in `y`:
@@ -206,12 +206,12 @@ Now that we know how to reorder using indices, we can use the match() function t
 The function returns the position in the second vector of the matches. Let's create vectors `first` and `second` to demonstrate how it works:
 
 ```r
-	first <- c("A","B","C","D","E")
-	second <- c("B","D","E","A","C")  # same letters but different order
-	**Images of first and second with values and positions**
+first <- c("A","B","C","D","E")
+second <- c("B","D","E","A","C")  # same letters but different order
+**Images of first and second with values and positions**
 	
-	match(first,second)
-	[1] 4 1 5 2 3
+match(first,second)
+[1] 4 1 5 2 3
 ```
 
 The function should return a vector of size `length(first)`. Each number that is returned represents the index of the `second` vector where the matching value was observed. 
@@ -219,51 +219,52 @@ The function should return a vector of size `length(first)`. Each number that is
 Let's change vector `second` so that only a subset are retained:
 
 ```r	
-	first <- c("A","B","C","D","E")
-	second <- c("D","B","A")  # remove values 
-	**Images of first and second with values and positions**
+first <- c("A","B","C","D","E")
+second <- c("D","B","A")  # remove values 
+**Images of first and second with values and positions**
 ```
 
 And try to `match` again:
 
 ```r
-	match(first,second)
+match(first,second)
 
-	[1]  3  2 NA  1 NA
+[1]  3  2 NA  1 NA
 ```
 
 Note, for values that don't match by default return an `NA` value. You can specify what values you would have it assigned using `nomatch` argument. Also, if there is more than one matching value found only the first is reported.
 We can also reorder data using the output of the `match` function. We can reorder the `second` vector using the indexes from the `match` function of where the elements of the `first` vector occur in the `second` vector. First,  we save the match indexes to a variable:
 
 ```r
-	first <- c("A","B","C","D","E")
-	second <- c("B","D","E","A","C") 
+first <- c("A","B","C","D","E")
+second <- c("B","D","E","A","C") 
 	
-	idx <- match(first,second)
-	
-	idx
-	[1] 4 1 5 2 3
+idx <- match(first,second)
+idx
+[1] 4 1 5 2 3
 ```
 
 Now, we can just use the indexes to reorder the elements of the `second` vector to be in the same positions as the matching elements in the `first` vector:
-	**Images of first and second with values and positions**
-	**Image of second_reordered with values and positions**
 
-```r	
+```r
+**Images of first and second with values and positions**
+	
 second[idx]  # Reordering the second vector to match the order of the first vector
 second_reordered <- second[idx]  # Reordering and saving the output to a variable
+
+**Image of second_reordered with values and positions**
 ```
 	
 ### Reordering genomic data using `match` function
 Using the `match` function, we now would like to *match the row names of our metadata to the column names of our expression data*, so these will be the arguments for `match`. Using these two arguments we will retrieve a vector of match indexes. The resulting vector represents the re-ordering of the column names in our data matrix to be identical to the rows in metadata:
  
  ```r
-	rownames(metadata)
+rownames(metadata)
 	
-	colnames(rpkm_data)
+colnames(rpkm_data)
 	
-	idx <- match(rownames(metadata), colnames(rpkm_data))
-	idx
+idx <- match(rownames(metadata), colnames(rpkm_data))
+idx
 ```
 
 Now we can create a new data matrix in which columns are re-ordered based on the match indices:
