@@ -153,9 +153,11 @@ all(rownames(metadata) == colnames(rpkm_data))
 
 We have a list of IDs for marker genes of particular interest. We want to extract count information associated with each of these genes, without having to scroll through our matrix of count data. We can do this using the `%in%` operator to extract the information for those genes from `rpkm_data`.
 
-1. Create a vector for your important gene IDs, and use the %in% operator to determine whether these genes are contained in the row names of our `rpkm_data` dataset.
+1. Create a vector for your important gene IDs, and use the `%in%`operator to determine whether these genes are contained in the row names of our `rpkm_data` dataset.
 
-		important_genes <- c("ENSMUSG00000083700", "ENSMUSG00000080990", "ENSMUSG00000065619", "ENSMUSG00000047945", "ENSMUSG00000081010", 	"ENSMUSG00000030970")
+```r
+important_genes <- c("ENSMUSG00000083700", "ENSMUSG00000080990", "ENSMUSG00000065619", "ENSMUSG00000047945", "ENSMUSG00000081010", 	"ENSMUSG00000030970")
+```
 	
 2. Extract the rows containing the important genes from your `rpkm_data` dataset.	
 
