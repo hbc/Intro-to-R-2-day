@@ -147,9 +147,34 @@ We have a list of IDs for marker genes of particular interest. We want to extrac
 
 ***
 
-### The `match` function
+## Reordering data using indexes
+Indexing `[ ]` can be used to extract values from a dataset as we saw earlier, but we can also use it to rearrange our data values. 
 
-We'll be using the `match` function to evaluate which samples are present in both dataframes, and then re-order them. This function takes at least 2 arguments: 
+	teaching_team <- c("Mary", "Meeta", "Radhika")
+	teaching_team
+	**Image of vector with positions**
+	
+Remember that we can return values in a vector by specifying it's position or index:
+
+	teaching_team[c(2, 3)] # Extracting values from a vector
+	teaching_team
+	
+We can also extract the values and reorder them:
+
+	teaching_team[c(3, 2)] # Extracting values and reordering them
+
+Similarly, we can extract all of the values and reorder them:
+
+	teaching_team[c(3, 1, 2)]
+	teaching_team
+	
+If we want to save our results, we need to assign to a variable:
+
+	reorder_teach <- teaching_team[c(3, 1, 2)] # Saving the results to a variable
+
+## The `match` function
+
+Now that we know how to reorder using indices, we can use the match() function to give us the indices to use to reorder two vectors so they match. We'll be using the `match` function to evaluate which samples are present in both dataframes, and then to re-order them. This function takes at least 2 arguments: 
 
 1. a vector of values to *be matched*
 2. a vector of values to be *matched against*. 
@@ -157,19 +182,20 @@ We'll be using the `match` function to evaluate which samples are present in bot
 The function returns the position in the second vector of the matches. Let's create vectors `first` and `second` to demonstrate how it works:
 
 	first <- c("A","B","C","D","E")
-	second <- c("E","D","C","B","A")  # same letters but backwards 
+	second <- c("B","D","E","A","C")  # same letters but different order
+	**Images of first and second with values and positions**
 	
 	match(first,second)
-	
-	[1] 5 4 3 2 1
+	[1] 4 1 5 2 3
 
 The function should return a vector of size `length(first)`. Each number that is returned represents the index of the `second` vector where the matching value was observed. 
 
 Let's change vector `second` so that only a subset are retained:
-
+	
 	first <- c("A","B","C","D","E")
 	second <- c("D","B","A")  # remove values 
-
+	**Images of first and second with values and positions**
+	
 And try to `match` again:
 
 	match(first,second)
@@ -177,36 +203,33 @@ And try to `match` again:
 	[1]  3  2 NA  1 NA
 
 Note, for values that don't match by default return an `NA` value. You can specify what values you would have it assigned using `nomatch` argument. Also, if there is more than one matching value found only the first is reported.
-
-### Reordering data using indexes
-Indexing `[ ]` can be used to extract values from a dataset as we saw earlier, but we can also use it to rearrange our data values. For example, we can reorder the `second` vector using the indexes from the `match` function of where the elements of the `first` vector occur in the `second` vector.
-
-First, we save the match indexes to a variable:
+We can also reorder data using the output of the `match` function. We can reorder the `second` vector using the indexes from the `match` function of where the elements of the `first` vector occur in the `second` vector. First,  we save the match indexes to a variable:
 
 	first <- c("A","B","C","D","E")
-	second <- c("E","D","C","B","A")  
+	second <- c("B","D","E","A","C") 
 	
 	idx <- match(first,second)
 	
 	idx
+	[1] 4 1 5 2 3
+
+Now, we can just use the indexes to reorder the elements of the `second` vector to be in the same positions as the matching elements in the `first` vector:
+	**Images of first and second with values and positions**
+	**Image of second_reordered with values and positions**
 	
-	[1] 5 4 3 2 1
+	second[idx]  # Reordering the second vector to match the order of the first vector
+	second_reordered <- second[idx]  # Reordering and saving the output to a variable
 
-Then, we can use the indexes to reorder the elements of the `second` vector to be in the same positions as the matching elements in the `first` vector:
-
-	second_reordered <- second[idx]
-
-	second_reordered
 	
 ### Reordering genomic data using `match` function
-Using the `match` function, we now would like to *match the column names of our metadata to the row names of our expression data*, so these will be the arguments for `match`. Using these two arguments we will retrieve a vector of match indexes. The resulting vector represents the re-ordering of the column names in our data matrix to be identical to the rows in metadata:
+Using the `match` function, we now would like to *match the row names of our metadata to the column names of our expression data*, so these will be the arguments for `match`. Using these two arguments we will retrieve a vector of match indexes. The resulting vector represents the re-ordering of the column names in our data matrix to be identical to the rows in metadata:
  
 	rownames(metadata)
 	
 	colnames(rpkm_data)
 	
 	idx <- match(rownames(metadata), colnames(rpkm_data))
-
+	idx
 
 Now we can create a new data matrix in which columns are re-ordered based on the match indices:
 
@@ -218,6 +241,7 @@ Check and see what happened by using `head`. You can also verify that column nam
 	head(rpkm_ordered)
 	all(row.names(metadata) == colnames(rpkm_ordered))
 
+Now that our samples are ordered the same in our metadata and counts data, we could proceed to perform differential expression analysis with this dataset.
 
 
 ## Calculating simple statistics
