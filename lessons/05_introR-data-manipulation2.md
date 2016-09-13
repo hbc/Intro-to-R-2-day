@@ -126,7 +126,7 @@ metadata[idx, ]
 Another way of partitioning **dataframes** is using the `subset()` function to return the rows of the dataframe for which the logical expression is TRUE. Allowing us to the subset the data in a single step. The syntax for the `subset()` function is:
 
 ```r
-subset(dataframe, column_name == "value", select = "name of column(s) to return")
+subset(dataframe, column_name == "value") # Any logical expression could replace the `== "value"`
 ```
 
 For example, we can look at the samples of a specific celltype "typeA":
@@ -158,7 +158,13 @@ sample2       Wt    typeA         2
 sample3       Wt    typeA         3
 ```
 
-Alternatively, we could try looking at only the first two replicates of each sample set. Here, we can use the less than operator since replicate is currently a numeric vector. Adding in the argument `select` allows us to specify which columns to keep. Which columns are left?
+Alternatively, we could try looking at only the first two replicates of each sample set. Here, we can use the less than operator since replicate is currently a numeric vector. Adding in the argument `select` allows us to specify which columns to keep, with the syntax:
+
+```r
+subset(dataframe, column_name == "value", select = "name of column(s) to return")
+```
+
+Which columns are left?
 
 ```r
 sub_meta <- subset(metadata, replicate < 3, select = c('genotype', 'celltype'))
