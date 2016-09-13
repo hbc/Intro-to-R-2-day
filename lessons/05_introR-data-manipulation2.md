@@ -32,13 +32,13 @@ metadata[3, ]    # vector containing all elements in the 3rd row
 If you were selecting specific columns from the data frame - the rows are left blank:
 
 ```r
-metadata[ ,3]    # vector containing all elements in the 3rd column
+metadata[ , 3]    # vector containing all elements in the 3rd column
 ```
 
 Just like with vectors, you can select multiple rows and columns at a time. Within the square brackets, you need to provide a vector of the desired values:	
 
 ```r
-metadata[ ,1:2] # dataframe containing first two columns
+metadata[ , 1:2] # dataframe containing first two columns
 metadata[c(1,3,6), ] # dataframe containing first, third and seventh rows
 ```
 
