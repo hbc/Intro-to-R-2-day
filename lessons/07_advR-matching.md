@@ -71,8 +71,6 @@ B <- c(2,4,6,8,1,5)  # add some odd numbers in
 # test to see if any of A are in B
 A %in% B
 ```
-!()[]
-
 ```
 ## [1]  TRUE FALSE  TRUE FALSE FALSE FALSE
 ```
@@ -81,19 +79,20 @@ The logical vector returned denotes which elements in `A` are also in `B` and wh
 
 We saw previously that we could use the output from a logical expression to subset data by returning only the values corresponding to `TRUE`. Therefore, we can use the output logical vector to subset our data, and return only those elements in `A`, which are also in `B` by returning only the TRUE values:
 
+![matching1](../img/in-operator1.png)
+
 ```r
-
-***Images of A and B with values inside boxes, indices below the boxes***
-
 idx <- A %in% B
 idx
-
-***Images of A and idx with values inside boxes, indices below the boxes***
-
-A[idx]
-
-***Image of A[idx] with values inside boxes, indices below the boxes***
 ```
+
+![matching2](../img/in-operator2.png)
+
+```r
+A[idx]
+```
+
+![matching3](../img/in-operator3.png)
 
 In these previous examples, the vectors were small and so it's easy to count by eye; but when we work with large datasets this is not practical. A quick way to assess whether or not we had any matches would be to use the `any` function to see if **any of the values contained in vector A are also in vector B**:
 
