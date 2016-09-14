@@ -65,10 +65,13 @@ Since vector A contains only odd numbers and vector B contains only even numbers
 ```r
 A <- c(1,3,5,7,9,11)   # odd numbers
 B <- c(2,4,6,8,1,5)  # add some odd numbers in 
+```
 
+```r
 # test to see if any of A are in B
 A %in% B
 ```
+!()[]
 
 ```
 ## [1]  TRUE FALSE  TRUE FALSE FALSE FALSE
