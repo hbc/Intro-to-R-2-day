@@ -212,8 +212,10 @@ The function returns the position in the second vector of the matches. Let's cre
 ```r
 first <- c("A","B","C","D","E")
 second <- c("B","D","E","A","C")  # same letters but different order
-**Images of first and second with values and positions**
+```
+![matching4](../img/match1.png)
 	
+```r
 match(first,second)
 [1] 4 1 5 2 3
 ```
@@ -224,9 +226,10 @@ Let's change vector `second` so that only a subset are retained:
 
 ```r	
 first <- c("A","B","C","D","E")
-second <- c("D","B","A")  # remove values 
-**Images of first and second with values and positions**
+second <- c("D","B","A")  # remove values
 ```
+
+![matching5](../img/match2.png)
 
 And try to `match` again:
 
@@ -250,15 +253,15 @@ idx
 
 Now, we can just use the indexes to reorder the elements of the `second` vector to be in the same positions as the matching elements in the `first` vector:
 
+![matching4](../img/match1.png)
+
 ```r
-**Images of first and second with values and positions**
-	
 second[idx]  # Reordering the second vector to match the order of the first vector
 second_reordered <- second[idx]  # Reordering and saving the output to a variable
-
-**Image of second_reordered with values and positions**
 ```
-	
+
+![matching7](../img/match3-reordered.png)
+
 ### Reordering genomic data using `match` function
 Using the `match` function, we now would like to *match the row names of our metadata to the column names of our expression data*, so these will be the arguments for `match`. Using these two arguments we will retrieve a vector of match indexes. The resulting vector represents the re-ordering of the column names in our data matrix to be identical to the rows in metadata:
  
