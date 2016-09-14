@@ -53,6 +53,8 @@ metadata$genotype
 You can use `names(metadata)` or `colnames(metadata)` to remind yourself of the column names. We can then supply index values to select specific values from that vector. For example, if we wanted the genotype information for the first five samples in `metadata`:
 
 ```r
+colnames(metadata)
+
 metadata$genotype[1:5]
 ```
 
@@ -78,9 +80,11 @@ sample11       KO    typeB
 sample12       KO    typeB
 ```
 
-While there is no equivalent `$` syntax to select a row by name, you can select specific rows using the row names:
+While there is no equivalent `$` syntax to select a row by name, you can select specific rows using the row names. To remember the names of the rows, you can use the `rownames()` function:
 
 ```r
+rownames(metadata)
+
 metadata[c("sample10", "sample12"),]
 ```
 
