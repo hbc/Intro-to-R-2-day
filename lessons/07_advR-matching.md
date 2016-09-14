@@ -251,9 +251,10 @@ idx
 [1] 4 1 5 2 3
 ```
 
-Now, we can just use the indexes to reorder the elements of the `second` vector to be in the same positions as the matching elements in the `first` vector:
-
 ![matching4](../img/match1.png)
+**image of idx with values and indices**
+
+Now, we can just use the indexes to reorder the elements of the `second` vector to be in the same positions as the matching elements in the `first` vector:
 
 ```r
 second[idx]  # Reordering the second vector to match the order of the first vector
