@@ -252,6 +252,7 @@ idx
 ```
 
 ![matching4](../img/match1.png)
+
 **image of idx with values and indices**
 
 Now, we can just use the indexes to reorder the elements of the `second` vector to be in the same positions as the matching elements in the `first` vector:
@@ -342,9 +343,9 @@ new_metadata <- cbind(metadata, samplemeans)
 Our metadata table is almost complete, we just need to add one additional column of data for `age_in_days`:
 
 ```r
-	age_in_days <- c(40, 32, 38, 35, 41, 32, 34, 26, 28, 28, 30, 32)
+age_in_days <- c(40, 32, 38, 35, 41, 32, 34, 26, 28, 28, 30, 32)
 	
-	new_metadata <- cbind(new_metadata, age_in_days)
+new_metadata <- cbind(new_metadata, age_in_days)
 ```
 
 Now our metadata is complete, and we are ready for data visulaization.
