@@ -171,8 +171,8 @@ Indexing `[ ]` can be used to extract values from a dataset as we saw earlier, b
 ```r
 teaching_team <- c("Mary", "Meeta", "Radhika")
 teaching_team
-**Image of vector with positions**
 ```
+![reordering](../img/teaching-team.png)
 
 Remember that we can return values in a vector by specifying it's position or index:
 
@@ -253,7 +253,7 @@ idx
 
 ![matching4](../img/match1.png)
 
-**image of idx with values and indices**
+![matching5](../img/match4-idx.png)
 
 Now, we can just use the indexes to reorder the elements of the `second` vector to be in the same positions as the matching elements in the `first` vector:
 
