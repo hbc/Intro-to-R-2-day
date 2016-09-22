@@ -214,6 +214,10 @@ first <- c("A","B","C","D","E")
 second <- c("B","D","E","A","C")  # same letters but different order
 ```
 ![matching4](../img/match1.png)
+
+***How would you reorder `second` vector to match `first` using indexes?***
+
+If we had large datasets, it would be difficult to reorder them by searching for the indices of the matching elements. This is where the `match` function comes in really handy:
 	
 ```r
 match(first,second)
