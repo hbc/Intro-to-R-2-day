@@ -162,7 +162,7 @@ We have a list of IDs for marker genes of particular interest. We want to extrac
 	```
 	
 2. Extract the rows containing the important genes from your `rpkm_data` dataset. 
-3. ***Extra credit:** Extract the genes using the %in% operator.*	
+3. _**Extra credit:** Extract the genes using the %in% operator._	
 
 ***
 
