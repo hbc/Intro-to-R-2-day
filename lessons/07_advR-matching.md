@@ -1,7 +1,7 @@
 ---
 title: "Data manipulation"
 authors: Meeta Mistry and Mary Piper
-date: "07/05/16"
+date: "09/22/16"
 layout: topic
 minutes: 90
 ---
@@ -151,7 +151,7 @@ all(rownames(metadata) == colnames(rpkm_data))
 **Looks like all of the samples are there, but will need to be reordered.**
 
 ***
-**Exercise** 
+**Exercises** 
 
 We have a list of IDs for marker genes of particular interest. We want to extract count information associated with each of these genes, without having to scroll through our matrix of count data. We can do this using the `%in%` operator to extract the information for those genes from `rpkm_data`.
 
@@ -161,7 +161,8 @@ We have a list of IDs for marker genes of particular interest. We want to extrac
 	important_genes <- c("ENSMUSG00000083700", "ENSMUSG00000080990", "ENSMUSG00000065619", "ENSMUSG00000047945", "ENSMUSG00000081010", 	"ENSMUSG00000030970")
 	```
 	
-2. Extract the rows containing the important genes from your `rpkm_data` dataset.	
+2. Extract the rows containing the important genes from your `rpkm_data` dataset. 
+3. ***Extra credit:** Extract the genes using the %in% operator.*	
 
 ***
 
@@ -199,6 +200,28 @@ If we want to save our results, we need to assign to a variable:
 ```r
 reorder_teach <- teaching_team[c(3, 1, 2)] # Saving the results to a variable
 ```
+
+***
+**Exercises** 
+
+1. For a research project, we asked healthy patients and cancer patients questions about their diet and exercise, where diet and exercise are factor variables and the individuals have unique IDs. We also collected blood work for all individuals. Create the following dataframes, `behavior` and `blood`:
+
+	```r
+	ID <- c(546, 983, 042, 952, 853, 061, 145, 704, 581, 237, 467, 249)
+	diet <- c("veg", "pes", "omni", "omni", "omni", "pes", "veg", "omni", "omni", "omni", "omni", "omni")
+	exercise <- c("high", "low", "low", "low", "med", "high", "high", "low", "low", "med", "low", "med")
+	behavior <- data.frame(ID, diet, exercise)
+	
+	ID <- c(983, 952, 704, 555, 853, 061, 042, 237, 145, 581, 249, 467, 841, 546)
+	blood_levels <- c(43543, 465, 4634, 94568, 134, 347, 2345, 5439, 850, 6840, 5483, 66452, 54371, 1347)
+	blood <- data.frame(ID, blood_levels)
+	```
+	
+2. We would like to see if we have diet and exercise information for all of our blood samples.
+
+
+
+***
 
 ## The `match` function
 
