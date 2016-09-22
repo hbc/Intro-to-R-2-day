@@ -204,23 +204,28 @@ reorder_teach <- teaching_team[c(3, 1, 2)] # Saving the results to a variable
 ***
 **Exercises** 
 
-1. For a research project, we asked healthy patients and cancer patients questions about their diet and exercise, where diet and exercise are factor variables and the individuals have unique IDs. We also collected blood work for all individuals. Create the following dataframes, `behavior` and `blood`:
+1. For a research project, we asked healthy volunteers and cancer patients questions about their diet and exercise. We also collected blood work for each individual, and each person was given a unique ID. Create the following dataframes, `behavior` and `blood`:
 
 	```r
-	ID <- c(546, 983, 042, 952, 853, 061, 145, 704, 581, 237, 467, 249)
-	diet <- c("veg", "pes", "omni", "omni", "omni", "pes", "veg", "omni", "omni", "omni", "omni", "omni")
-	exercise <- c("high", "low", "low", "low", "med", "high", "high", "low", "low", "med", "low", "med")
+	# Creating behavior dataframe
+	
+	ID <- c(546, 983, 042, 952, 853, 061)
+	diet <- c("veg", "pes", "omni", "omni", "omni", "omni")
+	exercise <- c("high", "low", "low", "low", "med", "high")
 	behavior <- data.frame(ID, diet, exercise)
+	
+	# Creating blood dataframe
 	
 	ID <- c(983, 952, 704, 555, 853, 061, 042, 237, 145, 581, 249, 467, 841, 546)
 	blood_levels <- c(43543, 465, 4634, 94568, 134, 347, 2345, 5439, 850, 6840, 5483, 66452, 54371, 1347)
 	blood <- data.frame(ID, blood_levels)
 	```
 	
-2. We would like to see if we have diet and exercise information for all of our blood samples.
+2. We would like to see if we have diet and exercise information for all of our blood samples. Determine whether all individuals with blood samples have associated behavioral information. Which IDs do not have behavioral information?
 
+3. The samples lacking behavioral information opted out of the study after having their blood drawn. Extract the blood data for only those samples that have behavioral information and save the results back to the `blood` variable.
 
-
+4. We would like to combine the dataframes together, but we need to make sure the data is in the same order before we do this. Reorder the blood data to match the order of the IDs in the `behavior` dataframe. Save the reordered blood dataframe as `blood_reordered`. Then combine the dataframes `blood_reordered` and `behavior` using the `data.frame()` function.
 ***
 
 ## The `match` function
@@ -292,6 +297,12 @@ second_reordered <- second[idx]  # Reordering and saving the output to a variabl
 ```
 
 ![matching7](../img/match3-reordered.png)
+
+***
+**Exercise** 
+
+Similar to the previous exercise, perform the reordering of the `blood` data to match the order of the IDs in the `behavior` dataframe, but this time use the `match()` function. Save the reordered blood dataframe as `blood_reordered_match`. 
+***
 
 ### Reordering genomic data using `match` function
 Using the `match` function, we now would like to *match the row names of our metadata to the column names of our expression data*, so these will be the arguments for `match`. Using these two arguments we will retrieve a vector of match indexes. The resulting vector represents the re-ordering of the column names in our data matrix to be identical to the rows in metadata:
