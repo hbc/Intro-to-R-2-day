@@ -172,7 +172,7 @@ Indexing `[ ]` can be used to extract values from a dataset as we saw earlier, b
 teaching_team <- c("Mary", "Meeta", "Radhika")
 teaching_team
 ```
-![reordering](../img/teaching-team.png)
+![reordering](../img/teaching_team.png)
 
 Remember that we can return values in a vector by specifying it's position or index:
 
@@ -245,13 +245,15 @@ We can also reorder data using the output of the `match` function. We can reorde
 ```r
 first <- c("A","B","C","D","E")
 second <- c("B","D","E","A","C") 
-	
+```
+
+![matching4](../img/match1.png)
+
+```
 idx <- match(first,second)
 idx
 [1] 4 1 5 2 3
 ```
-
-![matching4](../img/match1.png)
 
 ![matching5](../img/match4-idx.png)
 
