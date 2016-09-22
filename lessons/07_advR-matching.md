@@ -172,7 +172,7 @@ Indexing `[ ]` can be used to extract values from a dataset as we saw earlier, b
 teaching_team <- c("Mary", "Meeta", "Radhika")
 teaching_team
 ```
-![reordering](../img/teaching_team.png)
+![reordering](../img/teachin-team.png)
 
 Remember that we can return values in a vector by specifying it's position or index:
 
