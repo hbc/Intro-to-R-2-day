@@ -108,9 +108,13 @@ When finished, your working directory should look like:
 
 ### Adding files to your working directory
 
-There are a few files that we will be working with in the next few lessons and you can access them using the links provided below. If you right click on the link, and "Save link as..". Choose `~/Desktop/Intro-to-R/data` as the destination of the file. You should now see the file appear in your working directory.
+There are a few files that we will be working with in the next few lessons and you can access them using the links provided below. If you right click on the link, and "Save link as..". Choose `~/Desktop/Intro-to-R/data` as the destination of the file. You should now see the file appear in your working directory. **We will disucss these files a bit later in the lesson.**
 
 * Download metadata file using [this link](https://github.com/hbc/NGS_Data_Analysis_Course/raw/master/sessionII/data/mouse_exp_design.csv)
+* Download the counts file by right clicking on [this link](https://raw.githubusercontent.com/hbc/NGS_Data_Analysis_Course/master/sessionII/data/counts.rpkm.csv)
+
+> *NOTE:* If the files download automatically to some other location on your laptop, you can move them to the your working directory using your file explorer or navigating to the files in the `Files` tab of the bottom right panel of RStudio
+
 
 ## Interacting with R
 
@@ -190,6 +194,12 @@ If you're in Rstudio and you can't figure out why your command isn't running, yo
 1. Try highlighting only `3 +` from your script editor and running it. Find a way to bring back the command prompt `>` in the console.
 
 ***
+
+## Interacting with data in R
+
+As we mentioned R is commonly used for handling big data, and so it only makes sense that we learn about R in the context of some kind of relevant data. We had previously downloaded two files to your working directory. Since we will be working with these files over the course of the workshop, we will first take some time to introduce the data.
+
+
 
 
 ## Best practices
