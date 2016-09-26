@@ -103,7 +103,7 @@ idx <- metadata$celltype == "typeA"
 metadata[idx, ]
 ```
 
-##### Indexing with logical operators using the `which()` function
+##### Selecting indexes with logical operators using the `which()` function
 As you might have guessed, we can also use the `which()` function to return the indexes for which the logical expression is TRUE. For example, we can find the indexes where the `celltype` is `typeA` within the `metadata` dataframe:
 
 ```r
@@ -130,7 +130,7 @@ metadata[idx, ]
 	
 ***
 
-#### Indexing dataframes with logical vectors using `subset()` function
+#### Subsetting dataframes using logical operators and the `subset()` function
 
 Another way of partitioning **dataframes** is using the `subset()` function to return the rows of the dataframe for which the logical expression is TRUE. Allowing us to the subset the data in a single step. The syntax for the `subset()` function is:
 
