@@ -45,7 +45,7 @@ The `read.csv` function has *one required argument* and several *options* that c
 
 There are a wide selection of base functions in R that are useful for inspecting your data and summarizing it. Let's use the `metadata` file that we created to test out data inspection functions. 
 
-Take a look at the dataframe by typing out the variable name `metadata` and pressing return; the variable contains information describing the samples in our study. Each row holds information for a single sample, and the columns represent `genotype`(WT or KO),  `celltype` (typeA or typeB), and `replicate number`.
+Take a look at the dataframe by typing out the variable name `metadata` and pressing return; the variable contains information describing the samples in our study. Each row holds information for a single sample, and the columns contain categorical information about the `genotype`(WT or KO),  `celltype` (typeA or typeB), and `replicate number` (1,2, or 3).
 
 
 	metadata
