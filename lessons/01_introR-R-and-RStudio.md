@@ -199,7 +199,10 @@ If you're in Rstudio and you can't figure out why your command isn't running, yo
 
 As we mentioned R is commonly used for handling big data, and so it only makes sense that we learn about R in the context of some kind of relevant data. We had previously downloaded two files to your working directory. Since we will be working with these files over the course of the workshop, we will first take some time to introduce the data.
 
+### The dataset
+We have collected whole brain samples from 12 mice and want to evaluate expression differences between different sets of mice. All mice are of the same strain (C57/Bl6), but only half of them are wildtype and the other half represent a mouse model knockout of a gene specific to brain development. Within each group (wildtype and knockout) two different celltypes were isolated (typeA and typeB) and for each celltype we have three biological replicates. All of the above describes the **metadata** also defined as **information about the data**. Our metadata is stored in a comma separated values (CSV) file, which will look like the screenshot below (after you have loaded it into R -- this is covered in another lesson).
 
+<img src="../img/metadata_view.png" width=400> 
 
 
 ## Best practices
