@@ -197,21 +197,27 @@ If you're in Rstudio and you can't figure out why your command isn't running, yo
 
 ## Interacting with data in R
 
-As we mentioned R is commonly used for handling big data, and so it only makes sense that we learn about R in the context of some kind of relevant data. We had previously downloaded two files to your working directory. Since we will be working with these files over the course of the workshop, we will first take some time to introduce the data.
+R is commonly used for handling big data, and so it only makes sense that we learn about R in the context of some kind of relevant data. We had previously downloaded two files to your working directory. Since we will be working with these files over the course of the workshop, we will first take some time to introduce the data.
 
 ### The dataset
 We have collected whole brain samples from 12 mice and want to evaluate expression differences between them. The expression data represents normalized count data obtained from RNA-sequencing of the 12 brain samples. This data is stored in a comma separated values (CSV) file as a 2-dimensional matrix, with each row corresponding to a gene and each column corresponding to a sample.
 
-<img src="../img/counts_view.png" width=800> 
+<img src="../img/counts_view.png" width=900> 
 
 
 ### The metadata
 We have another file in which we identify **information about the data**. Our metadata is also stored in a CSV file. In this file, each row corresponds to a sample and each column contains some information about each sample. 
 
+The first column contains the row names, and **note that these are identical to the column names in our expression data file above** (albeit, in a slightly different order). The next few columns contain information about our samples that allow us to categorize them. For example, the second column contains genotype information for each sample. Each sample is classified in one of two categories: Wt (wildtype) or KO (knockout). *What types of categories do you observe in the remaining columns?*
+
 <img src="../img/metadata_view.png" width=400> 
+
+R is particularly good at handling this type of **categorical data**. Rather than simply storing this information as text, the data is represented in a specific data structure which allows the user to sort and manipulate the data in a quick and efficient manner. We will discuss this in more detail as we go through the different lessons in R!  
 
 
 ## Best practices
+
+Before we move on to more complex concepts and getting familiar with the language, we want to point out a few things about best practices when working with R which will help you stay organized in the long run:
 
 * Code and workflow are more reproducible if we can document everything that we do. Our end goal is not just to "do stuff", but to do it in a way that anyone can easily and exactly replicate our workflow and results. **All code should be written in the script editor and saved to file, rather than working in the console.** 
 * The **R console** should be mainly used to inspect objects, test a function or get help. 
