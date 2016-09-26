@@ -13,6 +13,16 @@ Approximate time: 30 min
 
 Thus far, to perform any specific task, we have executed every function separately; if we wanted to use the results of a function for downstream purposes, we saved the results to a variable. As you become more comfortable with R, you will find that it is more efficient to code using nested functions, or functions within other functions, which will allow you to execute multiple commands at the same time.
 
+Let's start with an example from the previous lesson to demonstrate. To obtain the rows in `metadata` whcih correspond to celltype A, we used two lines of code: 
+
+	idx <- metadata$celltype == "typeA"
+
+	metadata[idx, ]
+
+However, we could have also done this in one line of code and avoid having to create the variable `idx`:
+
+	metadata[metadata$celltype == "typeA",]
+
 Even if you decide to avoid writing nested functions for the time being, you should still have experience reading and understanding them. The key to understanding nested functions is to **read from the inside out**.
 
 ### Nested functions practice #1
