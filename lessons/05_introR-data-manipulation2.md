@@ -45,6 +45,11 @@ metadata[c(1,3,6), ] # dataframe containing first, third and seventh rows
 For larger datasets, it can be tricky to remember the column number that corresponds to a particular variable. (Is celltype in column 1
 or 2? oh, right... they are in column 1). In some cases, the column number for a variable can change if the script you are using adds or removes columns. It's therefore often better to use column names to refer to a particular variable, and it makes your code easier to read and your intentions clearer.
 
+```r
+metadata[1:3 , "celltype"] # elements of the celltype column corresponding to the first three samples
+```
+
+
 You can do operations on a particular column, by selecting it using the `$` sign. In this case, the entire column is a vector. For instance, to extract all the gentotypes from our dataset, we can use: 
 
 ```r
