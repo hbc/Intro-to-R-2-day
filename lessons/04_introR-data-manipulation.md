@@ -45,7 +45,7 @@ The `read.csv` function has *one required argument* and several *options* that c
 
 There are a wide selection of base functions in R that are useful for inspecting your data and summarizing it. Let's use the `metadata` file that we created to test out data inspection functions. 
 
-Take a look at the dataframe by typing out the variable name `metadata` and pressing return; the variable contains information describing the samples in our study. Each row holds information for a single sample, and the columns contain categorical information about the `genotype`(WT or KO),  `celltype` (typeA or typeB), and `replicate number` (1,2, or 3).
+Take a look at the dataframe by typing out the variable name `metadata` and pressing return; the variable contains information describing the samples in our study. Each row holds information for a single sample, and the columns contain categorical information about the sample `genotype`(WT or KO),  `celltype` (typeA or typeB), and `replicate number` (1,2, or 3).
 
 
 	metadata
@@ -215,7 +215,7 @@ Then, we use the brackets [ ] to extract the TRUE values from the dataset:
 	
 #### Releveling factors
 
-We have briefly talked about factors, but this data type only becomes more intuitive once you've had a chance to work with it.  Let's take a slight detour and learn about how to order and relevel categories within a factor. As we learned earlier, the categories in the `expression` factor were assigned integers alphabetically, with high=1, low=2, medium=3. To view the integer assignments under the hood you can use str:
+We have briefly talked about factors, but this data type only becomes more intuitive once you've had a chance to work with it.  Let's take a slight detour and learn about how to **order and relevel categories within a factor**. As we learned earlier, the categories in the `expression` factor were assigned integers alphabetically, with high=1, low=2, medium=3. To view the integer assignments under the hood you can use str:
 
 	str(expression)
 	Factor w/ 3 levels "high","low","medium": 2 1 3 1 2 3 1
