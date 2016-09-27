@@ -31,26 +31,25 @@ Let's work through some examples of nested functions!
 
 Based on our metadata, how many samples are Wt *and* from celltype A?
 
-**Step 1:** Classifying the samples using criteria based on logical operators
+**Step 1:** Classifying the samples using criteria based on logical operators:
 
 	vec <- metadata$celltype == "typeA" & metadata$genotype == "Wt"
 
-**Step 2:** Identifying which samples meet our criteria (i.e the `TRUE` samples)
+**Step 2:** Identifying which samples meet our criteria (i.e the `TRUE` samples):
 
 	true_vec <- which(vec)
 
-**Step 3:** Counting how many samples meet our criteria
+**Step 3:** Counting how many samples meet our criteria:
 
 	length(true_vec)
 	
 **Nested code:**
-Rather that assigning the output from each step to a separate variable, we could also just nest them into one another. In this way, the output would be used directly as input to the function it is nested within. *Don't forget to keep track of the closing parentheses!*
+Rather that assigning the output from each step to a separate variable, we could also just nest them into one another. **To create a nested function, simply replace the variable name with the code on the right hand side of the assignment operator.** *Don't forget to keep track of the sets of parentheses!*
 
 	length(which(metadata$celltype == "typeA" & metadata$genotype == "Wt"))
 
-
-### Nested functions practice #1
-You realize that you forgot to include important metadata regarding sex of your samples in your `metadata` file. You would like to add this data to your `metadata` dataframe, and using functions separately would require us to execute three separate steps:  
+### Nested functions practice #2
+You realize that you forgot to include important metadata regarding sex of your samples in your `metadata` file. You would like to add this data in and create a new `metadata_new` dataframe. Using functions separately would require us to execute three separate steps:  
 
 **Step 1:** Create the `sex` vector: 
 	
@@ -62,33 +61,36 @@ You realize that you forgot to include important metadata regarding sex of your 
 	 
 **Step 3:** Use the `cbind` function to add the column to the **end** of the `metadata` dataframe: 
 
-	metadata2 <- cbind(metadata, sex=sex_fr)
+	metadata_new <- cbind(metadata, sex=sex_fr)
 
-Instead of performing all three steps, we would like to create a nested function. **To create a nested function, simply replace the variable name with its contents**. We could combine steps 1 and 2 by replacing `sex` in **Step 2** with it's contents (`c("M","F","M","M","F","M","M","F","M","M","F","M")`):
+Instead of performing all three steps, we would like to create a nested function. We could first replace the `sex_fr` variable with the assignment in **Step2**:
 
-	sex_fr <- factor(c("M","F","M","M","F","M","M","F","M","M","F","M"))
-	metadata3 <- cbind(metadata, sex=sex_fr)
+	metadata_new <- cbind(metadata, sex=factor(sex))
 	
-It is possible to combine all steps, but your code would be difficult to read, so we don't recommend doing this:
+Or we can go a step further and combine all steps, making your code slightly more difficult to read (we don't recommend doing this):
 
-	metadata4 <- cbind(metadata,
+	metadata_new <- cbind(metadata,
 			sex=factor(c("M","F","M","M","F","M","M","F","M","M","F","M")))
 
-### Nested functions practice #2			
-Now, let's say that you are interested in counting the number samples in your dataset that have  "Wt" genotype within our `metadata` file. Obviously, for our small file, we could just look at the file, but if we had too many samples to count, we could do the following:
+### Nested functions practice #3			
+Now, let's say that you are interested in finding out which samples (listed by sample name) in your dataset that have  "Wt" genotype within our `metadata` file. For our small dataset, we can simply do this by eye but for larger datasets it is easier to write code to do so:
 
-**Step 1:** Determine the **location** of samples with `genotype` equal to "Wt":
+**Step 1:** Obtain the vector of row names from `metadata`:
 	
-	wt_loc <- which(metadata$genotype == "Wt")
-	
+	rnames <- row.names(metadata)
 
-**Step 2:** Determine the number of samples with `genotype` "Wt":
+**Step 2:** Determine the row **locations** in `metadata` for those samples with `genotype` equal to "Wt":
 	
-	length(wt_loc)
-	
+	rloc <- which(metadata$genotype == "Wt")
+
+**Step 3:** Identify the sample names by using the indexes determined in **Step 2**:
+
+	wt_samples <- rnames[rloc]
+
+
 Alternatively, we could combine the steps:
 
-	length(which(metadata$genotype == "Wt"))
+	wt_samples <- row.names(metadata)[which(metadata$genotype == "Wt")]
 	
 
 Learning to understand nested functions is a critical part of your mastery of R. Not only will their use improve your efficiency, but nested functions are frequently encountered in help forums and R package documentation, so understanding them is critical to your learning process. 
