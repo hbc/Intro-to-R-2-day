@@ -110,7 +110,7 @@ barplot(samplemeans, cex.names=0.5)
 
  ![bar-2](../img/unnamed-chunk-11-1.png) 
 
-The names are too small to read. The names can be adjusted in size (`cex.names`) so they all fit. Alternatively, we can also just change the names to be numeric values and keep the same size.
+The names are too small to read. Alternatively, we can also just change the names to be numeric values and keep the same size.
 
 
 ```r
