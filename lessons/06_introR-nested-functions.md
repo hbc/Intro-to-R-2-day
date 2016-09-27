@@ -13,20 +13,43 @@ Approximate time: 30 min
 
 Thus far, to perform any specific task, we have executed every function separately; if we wanted to use the results of a function for downstream purposes, we saved the results to a variable. As you become more comfortable with R, you will find that it is more efficient to code using nested functions, or functions within other functions, which will allow you to execute multiple commands at the same time.
 
-Let's start with an example from the previous lesson to demonstrate. To obtain the rows in `metadata` whcih correspond to celltype A, we used two lines of code: 
+Let's start with an example from the previous lesson to demonstrate. To obtain the rows in `metadata` which correspond to celltype A, we used two lines of code: 
 
 	idx <- metadata$celltype == "typeA"
 
 	metadata[idx, ]
 
-However, we could have also done this in one line of code and avoid having to create the variable `idx`:
+However, we could have also done this in a single line of code and avoid having to create the variable `idx`:
 
 	metadata[metadata$celltype == "typeA",]
 
-Even if you decide to avoid writing nested functions for the time being, you should still have experience reading and understanding them. The key to understanding nested functions is to **read from the inside out**.
+This is a rather simple example combining only two lines of code, but you see how the code becomes lengthy and slightly more difficult to reads. Even if you decide to avoid writing nested functions for the time being, you should still have experience reading and understanding them. The key to understanding nested functions is to **read from the inside out**.
+
+Let's work through some examples of nested functions!
 
 ### Nested functions practice #1
 
+Based on our metadata, how many samples are Wt *and* from celltype A?
+
+**Step 1:** Classifying the samples using criteria based on logical operators
+
+	vec <- metadata$celltype == "typeA" & metadata$genotype == "Wt"
+
+**Step 2:** Identifying which samples meet our criteria (i.e the `TRUE` samples)
+
+	true_vec <- which(vec)
+
+**Step 3:** Counting how many samples meet our criteria
+
+	length(true_vec)
+	
+**Nested code:**
+Rather that assigning the output from each step to a separate variable, we could also just nest them into one another. In this way, the output would be used directly as input to the function it is nested within. *Don't forget to keep track of the closing parentheses!*
+
+	length(which(metadata$celltype == "typeA" & metadata$genotype == "Wt"))
+
+
+### Nested functions practice #1
 You realize that you forgot to include important metadata regarding sex of your samples in your `metadata` file. You would like to add this data to your `metadata` dataframe, and using functions separately would require us to execute three separate steps:  
 
 **Step 1:** Create the `sex` vector: 
