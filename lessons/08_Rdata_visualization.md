@@ -133,7 +133,7 @@ And we can add some color, so that the bars are colored based on the `genotype`.
 	cols <- c("darkblue", "red")[new_metadata$genotype]
 	barplot(samplemeans, names.arg=c(1:12), horiz=TRUE, col=cols) 
 	
- ![bar-5](../img/bar-5-new.png) 
+ <img src="../img/bar-5-new.png" width=500> 
 
 ### Histogram
 If we are interested in an overall distribution of numerical data, a **histogram** is what we'd want. To plot a histogram of the data use the `hist` command:
