@@ -110,7 +110,7 @@ barplot(samplemeans, cex.names=0.5)
 
  ![bar-2](../img/unnamed-chunk-11-1.png) 
 
-The names are too small to read. Alternatively, we can also just change the names to be numeric values and keep the same size.
+The names are too small to read. The names can be adjusted in size (`cex.names`) so they all fit. Alternatively, we can also just change the names to be numeric values and keep the same size.
 
 
 ```r
@@ -127,6 +127,13 @@ barplot(samplemeans, names.arg=c(1:12), horiz=TRUE)
 ```
 
  ![bar-4](../img/unnamed-chunk-13-1.png) 
+
+And we can add some color, so that the bars are colored based on the `genotype`. To do this, we need to first create a color vector that corresponds to the genotype of each sample, and use that as the `col` parameter value:
+
+	cols <- c("darkblue", "red")[new_metadata$genotype]
+	barplot(samplemeans, names.arg=c(1:12), horiz=TRUE, col=cols) 
+	
+ ![bar-5](../img/bar-5.png) 
 
 ### Histogram
 If we are interested in an overall distribution of numerical data, a **histogram** is what we'd want. To plot a histogram of the data use the `hist` command:
