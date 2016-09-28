@@ -81,7 +81,9 @@ Let's create a new project directory for our "Introduction to R" lesson today.
 
 Before we organize our working directory, let's check to see where our current working directory is located by typing into the console:
 
-`getwd()`
+```r
+getwd()
+```
 
 Your working directory should be the `Intro-to-R` folder constructed when you created the project. The working directory is where RStudio will automatically look for any files you bring in and where it will automatically save any files you create, unless otherwise specified. 
 
