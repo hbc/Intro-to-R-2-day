@@ -79,14 +79,14 @@ We saw previously that we could use the output from a logical expression to subs
 ![matching1](../img/in-operator1.png)
 
 ```r
-idx <- A %in% B
-idx
+intersection <- A %in% B
+intersection
 ```
 
 ![matching2](../img/in-operator2.png)
 
 ```r
-A[idx]
+A[intersection]
 ```
 
 ![matching3](../img/in-operator3.png)
