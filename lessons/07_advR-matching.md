@@ -205,7 +205,7 @@ reorder_teach <- teaching_team[c(3, 1, 2)] # Saving the results to a variable
 ***
 **Exercises** 
 
-1. For a research project, we asked healthy volunteers and cancer patients questions about their diet and exercise. We also collected blood work for each individual, and each person was given a unique ID. Create the following dataframes, `behavior` and `blood`:
+For a research project, we asked healthy volunteers and cancer patients questions about their diet and exercise. We also collected blood work for each individual, and each person was given a unique ID. Create the following dataframes, `behavior` and `blood`:
 
 	```r
 	# Creating behavior dataframe
@@ -222,11 +222,11 @@ reorder_teach <- teaching_team[c(3, 1, 2)] # Saving the results to a variable
 	blood <- data.frame(ID, blood_levels)
 	```
 	
-2. We would like to see if we have diet and exercise information for all of our blood samples. Determine whether all individuals with blood samples have associated behavioral information. Which IDs do not have behavioral information?
+1. We would like to see if we have diet and exercise information for all of our blood samples. Determine whether all individuals with blood samples have associated behavioral information. Which IDs do not have behavioral information?
 
-3. The samples lacking behavioral information opted out of the study after having their blood drawn. Extract the blood data for only those samples that have behavioral information and save the results back to the `blood` variable.
+2. The samples lacking behavioral information opted out of the study after having their blood drawn. Extract the blood data for only those samples that have behavioral information and save the results back to the `blood` variable.
 
-4. We would like to combine the dataframes together, but we need to make sure the data is in the same order before we do this. Reorder the blood data to match the order of the IDs in the `behavior` dataframe. Save the reordered blood dataframe as `blood_reordered`. Then combine the dataframes `blood_reordered` and `behavior` using the `data.frame()` function.
+3. We would like to combine the dataframes together, but we need to make sure the data is in the same order before we do this. Reorder the blood data to match the order of the IDs in the `behavior` dataframe. Save the reordered blood dataframe as `blood_reordered`. Then combine the dataframes `blood_reordered` and `behavior` using the `data.frame()` function.
 ***
 
 ## The `match` function
