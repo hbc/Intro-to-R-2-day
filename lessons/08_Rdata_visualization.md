@@ -1,5 +1,5 @@
 ---
-title: "Advanced plotting and data vsualization in R"
+title: "Plotting and data visualization in R"
 author: "Mary Piper, Meeta Mistry"
 date: "Wednesday, September 28, 2016"
 ---
