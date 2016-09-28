@@ -1,9 +1,9 @@
 ---
 title: "Data manipulation"
 authors: Meeta Mistry and Mary Piper
-date: "09/22/16"
+date: "09/28/16"
 layout: topic
-minutes: 90
+minutes: 110
 ---
 
 ## Learning Objectives
