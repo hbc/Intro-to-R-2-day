@@ -2,7 +2,7 @@
 layout: topic
 title: Functions in R
 author: Data Carpentry contributors
-date: "Tuesday, June 28, 2016"
+date: "Wednesday, September 28, 2016"
 ---
 Approximate time: 50 min
 
@@ -22,8 +22,9 @@ A key feature of R is functions. Functions are **"self contained" modules of cod
 
 The general usage for a function is the name of the function followed by parentheses:
 
-	function_name(input)
-
+```r
+function_name(input)
+```
 The input(s) are called **arguments**, which can include:
 
 1. the physical object (any data structure) on which the function carries out a task 
@@ -31,7 +32,7 @@ The input(s) are called **arguments**, which can include:
 
 Not all functions take arguments, for example:
 
-```
+```r
 getwd()
 ```
 
@@ -47,31 +48,33 @@ You can also get functions from external [*packages or libraries*](https://githu
 
 Let's revisit a function that we have used previously to combine data `c()` into vectors. The *arguments* it takes is a collection of numbers, characters or strings (separated by a comma). The `c()` function performs the task of combining the numbers or characters into a single vector. You can also use the function to add elements to an existing vector:
 
-
-	glengths <- c(glengths, 90) # adding at the end	
-	glengths <- c(30, glengths) # adding at the beginning
-
+```r
+glengths <- c(glengths, 90) # adding at the end	
+glengths <- c(30, glengths) # adding at the beginning
+```
 
 What happens here is that we take the original vector `glengths` (containing three elements), and we are adding another item to either end. We can do this over and over again to build a vector or a dataset.
 
 Since R is used for statistical computing, many of the base functions involve mathematical operations. One example would be the function `sqrt()`. The input/argument must be a number, and the the output is the square root of that number. Let's try finding the square root of 81:
 
-	sqrt(81)
-
+```r
+sqrt(81)
+```
 
 Now what would happen if we **called the function** (e.g. ran the function), on a *vector of values* instead of a single value? 
 
-	sqrt(glengths)
-
+```r
+sqrt(glengths)
+```
 
 In this case the task was performed on each individual value of the vector `glengths` and the respective results were displayed.
 
 
 Let's try another function, this time using one that we can change some of the *options* (arguments that change the behavior of the function), for example `round`:
 
-
-	round(3.14159)
-
+```r
+round(3.14159)
+```
 
 We can see that we get `3`. That's because the default is to round to the nearest whole number. **What if we want a different number of significant digits?**
 
@@ -80,22 +83,27 @@ We can see that we get `3`. That's because the default is to round to the neares
 
 The best way of finding out this information is to use the `?` followed by the name of the function. Doing this will open up the help manual in the bottom right panel of RStudio that will provide a description of the function, usage, arguments, details, and examples: 
 
-	?round
-	
+```r
+?round
+```	
 Alternatively, if you are familiar with the function but just need to remind yourself of the names of the arguments, you can use:
 
-	args(round)
-
+```r
+args(round)
+```
 
 Even more useful is the `example()` function. This will allow you to run the examples section from the Online Help to see exactly how it works when executing the commands. Let's try that for `round()`:
 
-	example("round")
-	
-in our example, we can change the number of digits returned by **adding an argutment**. We can type `digits=2` or however many we may want:
+```r
+example("round")
+```
+
+In our example, we can change the number of digits returned by **adding an argutment**. We can type `digits=2` or however many we may want:
 
 
-	round(3.14159, digits=2)
-
+```r
+round(3.14159, digits=2)
+```
 
 > *NOTE:* If you provide the arguments in the exact same order as they are defined (in the help manual) you don't have to name them:
 >
@@ -122,8 +130,9 @@ The directories in R where the packages are stored are called the **libraries**.
 
 You can check what packages are loaded in your R session by typing into the console:
 
-	sessionInfo()
-
+```r
+sessionInfo()
+```
 
 In this workshop we will mostly be using functions from the standard base packages. However, the more you work with R you will come to realize that there is a cornucopia of R packages that offer a wide variety of functionality. To use additional packages will require installation. Many packages can be installed from the [CRAN](http://cran.r-project.org/) or [Bioconductor](https://www.bioconductor.org/) repositories.
 
@@ -167,8 +176,9 @@ Finally, R packages can also be installed from source. This is useful when you d
 
 To install from source, we use the same `install.packages` function but we have additional arguments that provide *specifications* to *change from defaults*:
 
-	install.packages('ggplot2_1.0.1.tar.gz', type="source", repos=NULL)
-
+```r
+install.packages('ggplot2_1.0.1.tar.gz', type="source", repos=NULL)
+```
 ### Loading libraries
 Once you have the package installed, you can load it into your R session for use. Any of the functions that are specific to that package will be available for you to use by simply calling the function as you would for any of the base functions. *Note that quotations are not required here.*
 
@@ -179,7 +189,7 @@ library(ggplot2)
 
 You can also check what is loaded in your current environment by using `sessionInfo()` and you you should see your package listed as:
 
-```
+```r
 other attached packages:
 [1] ggplot2_2.0.0
 ```
@@ -199,7 +209,9 @@ An alternative is to find the help manual online, which can be less technical an
 
 If you are looking for a function to do a particular task, you can use `help.search()` (*but only looks through the installed packages*):
 
-	help.search("scatter")
+```r
+help.search("scatter")
+```
 
 If you can't find what you are looking for, you can use the [rdocumention.org](http://www.rdocumentation.org) website that search through the help files across all packages available.
 
