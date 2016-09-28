@@ -105,7 +105,16 @@ Barplots are useful for comparing the distribution of a quantitative variable (n
 
 
 ```r
-barplot(samplemeans)
+?barplot
+# note that there is no "data=" argument for barplot()
+
+barplot(new_metadata$samplemeans)
+```
+
+This plot is not very useful without labels (sample names) for the bars  on the x-axis, let's add the names using `names.arg`.
+
+```r
+barplot(new_metadata$samplemeans, names.arg = row.names(new_metadata))
 ```
 
  ![bar-1](../img/unnamed-chunk-10-1.png) 
@@ -114,7 +123,7 @@ The sample names appear to be too large for the plot, we can change that by chan
 
 
 ```r
-barplot(samplemeans, cex.names=0.5)
+barplot(new_metadata$samplemeans, names.arg = row.names(new_metadata), cex.names = 0.5)
 ```
 
  ![bar-2](../img/unnamed-chunk-11-1.png) 
@@ -123,7 +132,7 @@ The names are too small to read. Alternatively, we can also just change the name
 
 
 ```r
-barplot(samplemeans, names.arg=c(1:12)) # supply numbers as labels
+barplot(new_metadata$samplemeans, names.arg = c(1:12)) # supply numbers as labels
 ```
 
  ![bar-3](../img/unnamed-chunk-12-1.png) 
@@ -132,22 +141,22 @@ We can also flip the axes so that the plot is projected horizontally.
 
 
 ```r
-barplot(samplemeans, names.arg=c(1:12), horiz=TRUE) 
+barplot(new_metadata$samplemeans, names.arg = c(1:12), horiz = TRUE)
 ```
 
  ![bar-4](../img/unnamed-chunk-13-1.png) 
 
 And we can add some color as we did before using the `col=` argument, so that the bars are colored based on the `genotype`. 
-
-	barplot(samplemeans, names.arg=c(1:12), horiz=TRUE, col=c("darkblue", "red")[new_metadata$genotype]) 
-	
+```r
+barplot(new_metadata$samplemeans, names.arg=c(1:12), horiz=TRUE, col=c("darkblue", "red")[new_metadata$genotype]) 
+```	
  <img src="../img/bar-5-new.png" width=500> 
 
 ### Histogram
 If we are interested in an overall distribution of numerical data, a **histogram** is what we'd want. To plot a histogram of the data use the `hist` command:
 
 ```r
-hist(samplemeans)
+hist(new_metadata$samplemeans)
 ```
 
  ![hist-1](../img/unnamed-chunk-14-1.png) 
