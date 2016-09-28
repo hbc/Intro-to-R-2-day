@@ -19,8 +19,8 @@ Now that we know how to talk with R via the script editor or the console, we wan
 Below is an example script highlighting the many different "parts of speech" for R (syntax):
 
   - the **comments** `#` and how they are used to document function and its content
-  - the **assignment operator** `<-`
   - **variables** and **functions**
+  - the **assignment operator** `<-`
   - the `=` for **arguments** in functions
 
 _NOTE: indentation and consistency in spacing is used to improve clarity and legibility_
