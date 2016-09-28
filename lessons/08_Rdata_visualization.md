@@ -264,7 +264,7 @@ Alternatively, we could color based on celltype by changing it to `color =cellty
 ggplot(new_metadata) +
   geom_point(aes(x = age_in_days, y= samplemeans, color = genotype,
   			shape=celltype)) 
-`````
+```
 
  ![ggscatter3](../img/ggscatter-3.png) 
 
@@ -275,7 +275,7 @@ The **size of the data points** are quite small. We can adjust that within the `
 ggplot(new_metadata) +
   geom_point(aes(x = age_in_days, y= samplemeans, color = genotype,
   			shape=celltype), size=3.0) 
-`````
+```
 
  ![ggscatter4](../img/ggscatter-4.png)
   
@@ -296,7 +296,7 @@ ggplot(new_metadata) +
   geom_point(aes(x = age_in_days, y= samplemeans, color = genotype,
   			shape=celltype), size=3.0) +
   theme_bw() 
-`````
+```
 
 Not in this case. But we can add arguments using `theme()` to change it ourselves. Since we are adding this layer on top (i.e later in sequence), any features we change will override what is set in the `theme_bw()`. Here we'll **increase the size of the axes labels and axes tick labels to be 1.5 times the default size.** When modfying the size of text we often use the `rel()` function. In this way the size we specify is relative to the default (similar to `cex` for base plotting). We can also provide the number vaue as we did with the data point size, but can be cumbersome if you don't know what the default font size is to begin with. 
 
@@ -307,7 +307,7 @@ ggplot(new_metadata) +
   theme_bw() +
   theme(axis.text = element_text(size=rel(1.5)),
   		axis.title = element_text(size=rel(1.5)))			
-`````
+```
  
  ![ggscatter5](../img/ggscatter-5.png)
  
@@ -360,7 +360,6 @@ ggplot(new_metadata) +
 2. Also, add an appropriate title to this plot.
 
 ***
-
 
 
 ## Boxplot
