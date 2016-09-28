@@ -18,9 +18,6 @@ Approximate time: 90 minutes
 
 When we are working with large sets of numbers it can be useful to display that information graphically to gain more insight. Visualization deserves an entire course of its own (there is that much to know!). During this lesson we will get you started with the basics of plotting by exploring a few features of R's base plotting package and then compare those to some more of advanced features using the popular Bioconductor package `ggplot2`.
 
-> *NOTE:* If you were unable to create the new metadata data frame in the last lesson, you can download it using [this link](https://github.com/hbc/NGS_Data_Analysis_Summer2016/raw/master/sessionIII/data/new_metadata.csv). Move the file into your working directory and from within RStudio load in the file using `read.csv()`. 
-
-
 ## Basic plots in R
 R has a number of built-in tools for basic graph types such as histograms, scatter plots, bar charts, boxplots and much [more](http://www.statmethods.net/graphs/). Rather than going through all of different types, we will focus on `plot()`, a generic function for plotting x-y data. 
 
@@ -41,6 +38,8 @@ age_in_days <- c(40, 32, 38, 35, 41, 32, 34, 26, 28, 28, 30, 32)
 new_metadata <- cbind(new_metadata, age_in_days)    
 # add the new vector as the last column to the new_metadata dataframe
 ```
+
+> *NOTE:* If you were unable to create the new metadata data frame in the last lesson, you can download it using [this link](https://github.com/hbc/NGS_Data_Analysis_Summer2016/raw/master/sessionIII/data/new_metadata.csv). Move the file into your working directory and from within RStudio load in the file using `read.csv()`.
 
 Now our metadata has all the information to draw a scatterplot. The base R function to do this is `plot(y ~ x, data)`:
 ```r
