@@ -164,7 +164,7 @@ We have a list of IDs for marker genes of particular interest. We want to extrac
 	important_genes <- c("ENSMUSG00000083700", "ENSMUSG00000080990", "ENSMUSG00000065619", "ENSMUSG00000047945", "ENSMUSG00000081010", 	"ENSMUSG00000030970")
 	```
 	
-2. Extract the rows containing the important genes from your `rpkm_data` dataset. 
+2. Using the `important_genes` vector, extract the rows containing the important genes from your `rpkm_data` dataset. 
 3. _**Extra credit:** Extract the rows containing the important genes from your `rpkm_data` dataset using the `%in%` operator._	
 
 ***
