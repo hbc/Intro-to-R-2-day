@@ -1,7 +1,7 @@
 ---
 title: "Data manipulation"
-authors: Meeta Mistry and Mary Piper
-date: "Tuesday, June 28, 2016"
+authors: Meeta Mistry, Mary Piper
+date: "Wednesday, September 28, 2016"
 ---
 Approximate time: 60 min
 
@@ -29,13 +29,15 @@ For example, if we have text file separated by commas (comma-separated values), 
 
 When working with genomic data, we often have a metadata file containing information on each sample in our dataset. Let's bring in the metadata file using the `read.csv` function. Check the arguments for the function to get an idea of the function options:
 
-```
+```r
 ?read.csv
 ```
 
 The `read.csv` function has *one required argument* and several *options* that can be specified. The mandatory argument is a path to the file and filename, which in our case is `data/mouse_exp_design.csv`. We will put the function to the right of the assignment operator, meaning that **any output will be saved as the variable name provided on the left**.
 
-	metadata <- read.csv(file='data/mouse_exp_design.csv')
+```r
+metadata <- read.csv(file='data/mouse_exp_design.csv')
+```
 
 > *Note: By default, `read.csv` converts (= coerces) columns that contain characters (i.e., text) into the `factor` data type. Depending on what you want to do with the data, you may want to keep these columns as `character`. To do so, `read.csv()` and `read.table()` have an argument called `stringsAsFactors` which can be set to `FALSE`.*
 > 
@@ -48,9 +50,9 @@ There are a wide selection of base functions in R that are useful for inspecting
 Take a look at the dataframe by typing out the variable name `metadata` and pressing return; the variable contains information describing the samples in our study. Each row holds information for a single sample, and the columns contain categorical information about the sample `genotype`(WT or KO),  `celltype` (typeA or typeB), and `replicate number` (1,2, or 3).
 
 
-	metadata
+```r
+metadata
 
-```
           genotype celltype replicate
 sample1        Wt    typeA		1
 sample2        Wt    typeA		2
@@ -69,17 +71,16 @@ sample12       KO    typeB		3
 
 Suppose we had a larger file, we might not want to display all the contents in the console. Instead we could check the top (the first 6 lines) of this `data.frame` using the function `head()`:
 
-
-	head(metadata)
-
+```r
+head(metadata)
+```
 
 Previously, we had mentioned that character values get converted to factors by default using `data.frame`. Another way to assess this change would be to use the __`str`__ucture function. You will get specific details on each column:
 
 
-	str(metadata)
+```r
+str(metadata)
 
-
-```
 'data.frame':	12 obs. of  3 variables:
  $ genotype : Factor w/ 2 levels "KO","Wt": 2 2 2 1 1 1 2 2 2 1 ...
  $ celltype : Factor w/ 2 levels "typeA","typeB": 1 1 1 1 1 1 2 2 2 2 ...
@@ -123,27 +124,36 @@ If we want to extract one or several values from a vector, we must provide one o
 
 Let's start by creating a vector called age:
 
-	age <- c(15, 22, 45, 52, 73, 81)
+```r
+age <- c(15, 22, 45, 52, 73, 81)
+```
 
 ![vector indices](../img/vector-index.png)
 
 Suppose we only wanted the fifth value of this vector, we would use the following syntax:
 
-	age[5]
-	
+```r
+age[5]
+```
+
 If we wanted all values except the fifth value of this vector, we would use the following:
 
-	age[-5]
+```r
+age[-5]
+```
 
 If we wanted to select more than one element we would still use the square bracket syntax, but rather than using a single value we would pass in a *vector of several index values*:
 
-	idx <- c(3,5,6) # create vector of the elements of interest
-	age[idx]
-
+```r
+idx <- c(3,5,6) # create vector of the elements of interest
+age[idx]
+```
 
 To select a sequence of continuous values from a vector, we would use `:` which is a special function that creates numeric vectors of integer in increasing or decreasing order. Let's select the *first four values* from age:
 
-	age[1:4]
+```r
+age[1:4]
+```
 
 Alternatively, if you wanted the reverse could try `4:1` for instance, and see what is returned. 
 
@@ -164,11 +174,15 @@ We can also use indexes with logical operators. Logical operators include greate
 
 We can use logical expressions to determine whether a particular condition is true or false. For example, let's use our age vector: 
 	
-	age
+```r
+age
+```
 
 If we wanted to know if each element in our age vector is greater than 50, we could write the following expression:	
 
-	age > 50
+```r
+age > 50
+```
 
 Returned is a vector of logical values the same length as age with TRUE and FALSE values indicating whether each element in the vector is greater than 50.
 
@@ -176,19 +190,21 @@ We can use these logical vectors to select only the elements in a vector with TR
 
 Create an index with logical operators to select all values in the `age` vector over 50 **or** `age` less than 18:
 
-	idx <- age > 50 | age < 18
+```r
+idx <- age > 50 | age < 18
 	
-	idx
+idx
 	
-	age
+age
 
-	age[idx]
+age[idx]
+```
 
 ##### Indexing with logical operators using the `which()` function
 
 While logical expressions will return a vector of TRUE and FALSE  values of the same length, we could use the `which()` function to output the indexes where the values are TRUE. Indexing with either method generates the same results, and personal preference determines which method you choose to use. For example:
 
-```
+```r
 idx <- which(age > 50 | age < 18)
 
 idx
@@ -207,18 +223,24 @@ Let's extract the values of the factor with high expression:
 
 First, we create a logical vector of TRUE and FALSE values:
 
-	idx <- expression == "high"
+```r
+idx <- expression == "high"
+```
 
 Then, we use the brackets [ ] to extract the TRUE values from the dataset:
 
-	expression[idx]
+```r
+expression[idx]
+```
 	
 #### Releveling factors
 
 We have briefly talked about factors, but this data type only becomes more intuitive once you've had a chance to work with it.  Let's take a slight detour and learn about how to **order and relevel categories within a factor**. As we learned earlier, the categories in the `expression` factor were assigned integers alphabetically, with high=1, low=2, medium=3. To view the integer assignments under the hood you can use str:
 
-	str(expression)
-	Factor w/ 3 levels "high","low","medium": 2 1 3 1 2 3 1
+```r
+str(expression)
+Factor w/ 3 levels "high","low","medium": 2 1 3 1 2 3 1
+```
 
 The unique elements are referred to as "factor levels".
 
@@ -226,18 +248,22 @@ In the example above, the factor has levels but it is unordered, i.e. there is n
 
 To order factor levels, you can add an argument to the `factor()` function, ordered=TRUE:
 
-	expression <- factor(expression, ordered=TRUE)    ## Note that the `factor()` function is used to create a factor, & to modify the characteristics of an existing factor
-	
-	str(expression)
-	Ord.factor w/ 3 levels "low"<"high"<..: 1 3 2 3 1 2 3
+```r
+expression <- factor(expression, ordered=TRUE)    ## Note that the `factor()` function is used to create a factor, & to modify the characteristics of an existing factor
+
+str(expression)
+Ord.factor w/ 3 levels "low"<"high"<..: 1 3 2 3 1 2 3
+```
 
 Now the output of the `str()` function states that this is an "Ord.factor", and there are "<" signs to denote that low is the lowest category. 
 
 However, the order of categories is still incorrect, because R is ordering them alphabetically. R does not consider the meaning of the words here, so we have to coerce the proper ordering (i.e. "low" < "medium" < "high") using the `factor()` function once again.
 
-	expression <- factor(expression, levels=c("low", "medium", "high"), ordered=TRUE)    
+```r
+expression <- factor(expression, levels=c("low", "medium", "high"), ordered=TRUE)    
 	
-	str(expression)
+str(expression)
+```
 
 ***
 **Exercise**
