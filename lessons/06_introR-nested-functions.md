@@ -95,7 +95,7 @@ metadata_new <- cbind(metadata,
 ```
 
 ### Nested functions practice #3			
-Now, let's say that you are interested in finding out which samples (listed by sample name) in your dataset that have  "Wt" genotype within our `metadata` file. For our small dataset, we can simply do this by eye but for larger datasets it is easier to write code to do so:
+Now, let's say that you are interested in finding out which samples (listed by sample name) in your dataset have  "Wt" genotype within our `metadata` file. For our small dataset, we can simply do this by eye but for larger datasets it is easier to write code to do so:
 
 **Step 1:** Obtain the vector of row names from `metadata`:
 	
