@@ -25,10 +25,11 @@ Take a look at the first few lines of the data matrix to see what's in there.
 head(rpkm_data)
 ```
 
-It looks as if the sample names (header) in our data matrix are similar to the row names of our metadata file, but it's hard to tell since they are not in the same order. We can do a quick check of the dimensions and at least see if the numbers match up. 
+It looks as if the sample names (header) in our data matrix are similar to the row names of our metadata file, but it's hard to tell since they are not in the same order. We can do a quick check of the number of columns in the count data and the rows in the metadata and at least see if the numbers match up. 
 
 ```r
 ncol(rpkm_data)
+nrow(metadata)
 ```
 
 What we want to know is, **do we have data for every sample that we have metadata?** 
