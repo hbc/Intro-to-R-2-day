@@ -76,7 +76,7 @@ The logical vector returned denotes which elements in `A` are also in `B` and wh
 
 We saw previously that we could use the output from a logical expression to subset data by returning only the values corresponding to `TRUE`. Therefore, we can use the output logical vector to subset our data, and return only those elements in `A`, which are also in `B` by returning only the TRUE values:
 
-![matching1](../img/in-operator1.png)
+![matching1](../img/in-operator1-new.png)
 
 ```r
 intersection <- A %in% B
