@@ -39,7 +39,7 @@ Just like with vectors, you can select multiple rows and columns at a time. With
 
 ```r
 metadata[ , 1:2] # dataframe containing first two columns
-metadata[c(1,3,6), ] # dataframe containing first, third and seventh rows
+metadata[c(1,3,6), ] # dataframe containing first, third and sixth rows
 ```
 
 For larger datasets, it can be tricky to remember the column number that corresponds to a particular variable. (Is celltype in column 1
