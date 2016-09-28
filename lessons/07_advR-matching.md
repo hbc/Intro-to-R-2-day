@@ -101,7 +101,14 @@ The `all` function is also useful. Given a logical vector, it will tell you whet
 ```r
 all(A %in% B)
 ```
+***
+**Exercises** 
 
+1. Using the `A` and `B` vectors created above, evaluate each element in `B` to see if there is a match in `A`
+
+2. Subset the `B` vector to only return those values that are also in `A`.
+
+***
 Suppose we had **two vectors that had the same values but just not in the same order**. We could also use `all` to test for that. Rather than using the `%in%` operator we would use `==` and compare each element to the same position in the other vector. Unlike the `%in%` operator, **for this to work you must have two vectors that are of equal length**.
 
 ```r
