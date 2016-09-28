@@ -164,7 +164,7 @@ hist(new_metadata$samplemeans)
 The range of values for sample means is 9 to 16. As you can see R will automatically calculate the intervals to use. There are many options to determine how to break up the intervals. Let's increase the number of breaks to see how that changes the plot:
 
 ```r
-hist(samplemeans, xlab="Mean expression level", main="", breaks=20) 
+hist(new_metadata$samplemeans, xlab="Mean expression level", main="", breaks=20) 
 ```
 
  ![hist-2](../img/hist-1.png) 
@@ -173,7 +173,7 @@ Similar to the other plots we can tweak the aesthetics. Let's color in the bar a
 
 
 ```r
-hist(samplemeans, xlab="Mean expression level", main="", col="darkgrey", border=FALSE) 
+hist(new_metadata$samplemeans, xlab="Mean expression level", main="", col="darkgrey", border=FALSE) 
 ```
 
  ![hist-3](../img/unnamed-chunk-15-1.png) 
