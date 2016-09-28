@@ -48,7 +48,7 @@ It will take a vector as input to the left and will **evaluate each element to s
 A <- c(1,3,5,7,9,11)   # odd numbers
 B <- c(2,4,6,8,10,12)  # even numbers
 
-# test to see if any of A are in B	
+# test to see if each of the elements of A is in B	
 A %in% B
 ```
 
@@ -65,7 +65,7 @@ B <- c(2,4,6,8,1,5)  # add some odd numbers in
 ```
 
 ```r
-# test to see if each of the elements of A are in B
+# test to see if each of the elements of A is in B
 A %in% B
 ```
 ```
