@@ -1,6 +1,6 @@
 ---
 title: "Data manipulation"
-authors: Meeta Mistry, Mary Piper
+authors: Meeta Mistry, Mary Piper, Radhika Khetani
 date: "Wednesday, September 28, 2016"
 ---
 Approximate time: 60 min
