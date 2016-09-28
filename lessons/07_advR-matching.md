@@ -1,10 +1,10 @@
 ---
-title: "Data manipulation"
-authors: Meeta Mistry and Mary Piper
-date: "09/28/16"
-layout: topic
-minutes: 110
+title: "Advanced R, matching"
+authors: Meeta Mistry, Mary Piper
+date: "Wednesday, September 28, 2016"
 ---
+Approximate time: 110 min
+
 
 ## Learning Objectives
 * Learning how to match and re-order data 
@@ -52,7 +52,7 @@ B <- c(2,4,6,8,10,12)  # even numbers
 A %in% B
 ```
 
-```
+```r
 ## [1] FALSE FALSE FALSE FALSE FALSE FALSE
 ```
 
@@ -68,7 +68,8 @@ B <- c(2,4,6,8,1,5)  # add some odd numbers in
 # test to see if each of the elements of A is in B
 A %in% B
 ```
-```
+
+```r
 ## [1]  TRUE FALSE  TRUE FALSE FALSE FALSE
 ```
 
