@@ -1,8 +1,8 @@
 ---
 layout: topic
 title: R Syntax and Data Structures
-authors: Meeta Mistry and Mary Piper
-date: "Tuesday, June 28, 2016"
+authors: Meeta Mistry, Mary Piper
+date: "Wednesday, September 28, 2016"
 ---
 Approximate time: 70 min
 
@@ -50,7 +50,7 @@ meta <- read.delim(file.path(metaDir, '2015-1018_sample_key.csv'), header=T, sep
 To do useful and interesting things in R, we need to assign _values_ to
 _variables_ using the assignment operator, `<-`.  For example, we can use the assignment operator to assign the value of `3` to `x` by executing:
 
-```
+```r
 x <- 3
 ```
 
@@ -67,7 +67,7 @@ In the example above, we created a variable or a 'bucket' called `x`. Inside we 
 
 Let's create another variable called `y` and give it a value of 5. 
 
-```
+```r
 y <- 5
 ```
 
@@ -83,13 +83,13 @@ You can also view information on the variable by looking in your `Environment` w
 
 Now we can reference these buckets by name to perform mathematical operations on the values contained within. What do you get in the console for the following operation: 
 
-```
+```r
 x + y
 ```
 
 Try assigning the results of this operation to another variable called `number`. 
 
-```
+```r
 number <- x + y
 ```
 
@@ -207,12 +207,15 @@ A **factor** is a special type of vector that is used to **store categorical dat
 
 Let's create a factor vector and explore a bit more.  We'll start by creating a character vector describing three different levels of expression:
 
-	expression <- c("low", "high", "medium", "high", "low", "medium", "high")
-
+```r
+expression <- c("low", "high", "medium", "high", "low", "medium", "high")
+```
 
 Now we can convert this character vector into a *factor* using the `factor()` function:
- 
-	expression <- factor(expression)
+
+```r
+expression <- factor(expression)
+```
 
 So, what exactly happened when we applied the `factor()` function? 
 
@@ -255,11 +258,15 @@ A data frame is the most common way of storing data in R, and if used systematic
 
 We can create a dataframe by bringing **vectors** together to **form the columns**. We do this using the `data.frame()` function, and giving the function the different vectors we would like to bind together. *This function will only work for vectors of the same length.*
 
-	df <- data.frame(species, glengths)
+```r
+df <- data.frame(species, glengths)
+```
 
 Beware of `data.frame()`’s default behaviour which turns **character vectors into factors**. Print your data frame to the console:
 
-	df
+```r
+df
+```
 
 Upon inspection of our dataframe, we see that although the species vector was a character vector, it automatically got converted into a factor inside the data frame (the removal of quotation marks). We will show you how to change the default behavior of a function in the next lesson.
 
@@ -274,24 +281,25 @@ Lists are a data structure in R that can be perhaps a bit daunting at first, but
 
 If you have variables of different data structures you wish to combine, you can put all of those into one list object by using the `list()` function and placing all the items you wish to combine within parantheses:
 
-	list1 <- list(species, df, number)
-
+```r
+list1 <- list(species, df, number)
+```
 Print out the list to screen to take a look at the components:
 
-```
-	list1
+```r
+list1
 	
-	[[1]]
-	[1] "ecoli" "human" "corn" 
+[[1]]
+[1] "ecoli" "human" "corn" 
 
-	[[2]]
-	  species glengths
-	1   ecoli      4.6
-	2   human   3000.0
-	3    corn  50000.0
+[[2]]
+  species glengths
+1   ecoli      4.6
+2   human   3000.0
+3    corn  50000.0
 
-	[[3]]
-	[1] 5
+[[3]]
+[1] 5
 
 ```
 
