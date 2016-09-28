@@ -137,10 +137,9 @@ barplot(samplemeans, names.arg=c(1:12), horiz=TRUE)
 
  ![bar-4](../img/unnamed-chunk-13-1.png) 
 
-And we can add some color, so that the bars are colored based on the `genotype`. To do this, we need to first create a color vector that corresponds to the genotype of each sample, and use that as the `col` parameter value:
+And we can add some color as we did before using the `col=` argument, so that the bars are colored based on the `genotype`. 
 
-	cols <- c("darkblue", "red")[new_metadata$genotype]
-	barplot(samplemeans, names.arg=c(1:12), horiz=TRUE, col=cols) 
+	barplot(samplemeans, names.arg=c(1:12), horiz=TRUE, col=c("darkblue", "red")[new_metadata$genotype]) 
 	
  <img src="../img/bar-5-new.png" width=500> 
 
