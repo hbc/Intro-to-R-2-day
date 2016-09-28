@@ -1,5 +1,5 @@
 ---
-title: "Data manipulation"
+title: "Nested Functions"
 authors: Meeta Mistry, Mary Piper
 date: "Wednesday, September 28, 2016"
 ---
