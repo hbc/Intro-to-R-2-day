@@ -35,7 +35,7 @@ What we want to know is, **do we have data for every sample that we have metadat
 
 ## The `%in%` operator
  
-Although lacking in [documentation](http://dr-k-lo.blogspot.com/2013/11/in-in-r-underused-in-operator.html) this operator is well-used and convenient once you get the hang of it. The operator is used with the following syntax: 
+Although lacking in [documentation](http://dr-k-lo.blogspot.com/2013/11/) this operator is well-used and convenient once you get the hang of it. The operator is used with the following syntax: 
 
 ```r
 vector1_of_values %in% vector2_of_values
