@@ -1,7 +1,7 @@
 ---
 title: "Advanced plotting and data vsualization in R"
 author: "Mary Piper, Meeta Mistry"
-date: "Wednesday, October 28, 2015"
+date: "Wednesday, September 28, 2016"
 ---
 
 Approximate time: 90 minutes
