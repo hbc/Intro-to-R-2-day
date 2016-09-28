@@ -174,7 +174,6 @@ Indexing `[ ]` can be used to extract values from a dataset as we saw earlier, b
 
 ```r
 teaching_team <- c("Mary", "Meeta", "Radhika")
-teaching_team
 ```
 ![reordering](../img/teachin-team.png)
 
@@ -195,7 +194,6 @@ Similarly, we can extract all of the values and reorder them:
 
 ```r
 teaching_team[c(3, 1, 2)]
-teaching_team
 ```
 
 If we want to save our results, we need to assign to a variable:
