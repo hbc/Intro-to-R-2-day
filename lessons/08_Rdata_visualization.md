@@ -35,10 +35,12 @@ Here, you will find yourself having to press `<Return>` so you can scroll throug
 For some hands-on practice we are going to use `plot` to draw a scatter plot and obtain a graphical view of the relationship between two sets of continuous numeric data. From our new_metadata file we will take the `samplemeans` column and plot it against a new column, we are going to call `age_in_days`, to see how mean expression changes with age. 
 
 ```r	
-	age_in_days <- c(40, 32, 38, 35, 41, 32, 34, 26, 28, 28, 30, 32)    
-		# create a numeric vector with ages. Note that there are 12 elements, the same as the number of samples our dataset
+age_in_days <- c(40, 32, 38, 35, 41, 32, 34, 26, 28, 28, 30, 32)    
+ # Create a numeric vector with ages. 
+ # Note that there are 12 elements
 	
-	new_metadata <- cbind(new_metadata, age_in_days)    # add the new vector as the last column to the new_metadata dataframe
+anew_metadata <- cbind(new_metadata, age_in_days)    
+ # add the new vector as the last column to the new_metadata dataframe
 ```
 
 Now our metadata is ready to use for plotting exercises. The base R function to do this is `plot(y ~ x, data)`:
