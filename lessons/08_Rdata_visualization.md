@@ -42,7 +42,7 @@ new_metadata <- cbind(new_metadata, age_in_days)
 # add the new vector as the last column to the new_metadata dataframe
 ```
 
-Now our metadata is ready to use for plotting exercises. The base R function to do this is `plot(y ~ x, data)`:
+Now our metadata has all the information to draw a scatterplot. The base R function to do this is `plot(y ~ x, data)`:
 ```r
 plot(samplemeans ~ age_in_days, data=new_metadata)
 ```
