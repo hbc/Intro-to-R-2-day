@@ -116,13 +116,13 @@ Suppose we had **two vectors that had the same values but just not in the same o
 A <- c(1,2,3,4,5)
 B <- c(5,4,3,2,1)  # same numbers but backwards 
 
-# test to see if any of A are in B
+# test to see if each element of A is in B
 A %in% B
 
-# test to see if any of A is equal to B
+# test to see if each element of A is in the same position in B
 A == B
 
-# use all to check if they are a perfect match
+# use all() to check if they are a perfect match
 all(A == B)
 
 ```
