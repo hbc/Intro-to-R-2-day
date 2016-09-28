@@ -97,16 +97,16 @@ metadata_new <- cbind(metadata,
 ### Nested functions practice #3			
 Now, let's say that you are interested in finding out which samples (listed by sample name) in your dataset have  "Wt" genotype within our `metadata` file. For our small dataset, we can simply do this by eye but for larger datasets it is easier to write code to do so:
 
-**Step 1:** Obtain the vector of row names from `metadata`:
-	
-```r
-rnames <- row.names(metadata)
-```
-
-**Step 2:** Determine the row **locations** in `metadata` for those samples with `genotype` equal to "Wt":
+**Step 1:** Determine the row **locations** in `metadata` for those samples with `genotype` equal to "Wt":
 	
 ```r
 rloc <- which(metadata$genotype == "Wt")
+```
+
+**Step 2:** Obtain the vector of row names from `metadata`:
+	
+```r
+rnames <- row.names(metadata)
 ```
 
 **Step 3:** Identify the sample names by using the indexes determined in **Step 2**:
@@ -123,6 +123,10 @@ wt_samples <- row.names(metadata)[which(metadata$genotype == "Wt")]
 
 Learning to understand nested functions is a critical part of your mastery of R. Not only will their use improve your efficiency, but nested functions are frequently encountered in help forums and R package documentation, so understanding them is critical to your learning process. 
 
+***
+**Exercise**
+
+Use nested functions and the `subset()` function to find out which samples (listed by sample name) in your dataset have  "typeB" cell type within our `metadata` file.
 
 ---
 
