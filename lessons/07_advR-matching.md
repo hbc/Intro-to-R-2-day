@@ -166,7 +166,8 @@ We have a list of IDs for marker genes of particular interest. We want to extrac
 	```
 	
 2. Extract the rows containing the important genes from your `rpkm_data` dataset using the `%in%` operator 
-3. **Extra Credit** Using the `important_genes` vector, extract the rows containing the important genes from your `rpkm_data` dataset without using the `%in% operator`.
+
+**Extra Credit:** Using the `important_genes` vector, extract the rows containing the important genes from your `rpkm_data` dataset without using the `%in% operator`.
 
 ***
 
