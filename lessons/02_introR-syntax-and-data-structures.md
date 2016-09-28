@@ -308,7 +308,7 @@ There are three components corresponding to the three different variables we pas
 ***
 **Exercise**
 
-1. Create a list with `species`, `glengths`, and `number`.
+Create a list called `list2` with `species`, `glengths`, and `number`.
 
 ---
 
