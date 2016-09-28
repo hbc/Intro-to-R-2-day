@@ -240,12 +240,14 @@ blood <- data.frame(ID, blood_levels)
 
 ## The `match` function
 
-Now that we know how to reorder using indices, we can use the match() function to give us the indices to use to reorder two vectors so they match. We'll be using the `match` function to evaluate which samples are present in both dataframes, and then to re-order them. This function takes at least 2 arguments: 
+Now that we know how to reorder using indices, we can use the `match()` function to match two vectors. We'll be using it to evaluate which samples are present in both our counts and metadata dataframes, and then to re-order the columns in the counts matrix to match the row names in the metadata matrix. 
+
+`match()` takes at least 2 arguments: 
 
 1. a vector of values to *be matched*
 2. a vector of values to be *matched against*. 
 
-The function returns the position in the second vector of the matches. Let's create vectors `first` and `second` to demonstrate how it works:
+The function returns the position of the matches (indices) with respect to the second vector, which can be used to re-order it so that it matches the order in the first vector.  Let's create vectors `first` and `second` to demonstrate how it works:
 
 ```r
 first <- c("A","B","C","D","E")
