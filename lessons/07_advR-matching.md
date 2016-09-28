@@ -76,7 +76,7 @@ The logical vector returned denotes which elements in `A` are also in `B` and wh
 
 We saw previously that we could use the output from a logical expression to subset data by returning only the values corresponding to `TRUE`. Therefore, we can use the output logical vector to subset our data, and return only those elements in `A`, which are also in `B` by returning only the TRUE values:
 
-![matching1](../img/in-operator1-new.png)
+![matching1](../img/in-operator1.png)
 
 ```r
 intersection <- A %in% B
@@ -207,7 +207,7 @@ reorder_teach <- teaching_team[c(3, 1, 2)] # Saving the results to a variable
 ***
 **Exercises** 
 
-For a research project, we asked healthy volunteers and cancer patients questions about their diet and exercise. We also collected blood work for each individual, and each person was given a unique ID. Create the following dataframes, `behavior` and `blood`:
+For a research project, we asked healthy volunteers and cancer patients questions about their diet and exercise. We also collected blood work for each individual, and each person was given a unique ID. Create the following dataframes, `behavior` and `blood` by copy/pasting the code below:
 
 ```r
 # Creating behavior dataframe
@@ -223,12 +223,15 @@ ID <- c(983, 952, 704, 555, 853, 061, 042, 237, 145, 581, 249, 467, 841, 546)
 blood_levels <- c(43543, 465, 4634, 94568, 134, 347, 2345, 5439, 850, 6840, 5483, 66452, 54371, 1347)
 blood <- data.frame(ID, blood_levels)
 ```
-	
-1. We would like to see if we have diet and exercise information for all of our blood samples. Determine whether all individuals with blood samples have associated behavioral information. Which IDs do not have behavioral information?
 
-2. The samples lacking behavioral information opted out of the study after having their blood drawn. Extract the blood data for only those samples that have behavioral information and save the results back to the `blood` variable.
+1. We would like to see if we have diet and exercise information for all of our blood samples. Using the `ID` information, determine whether all individuals with blood samples have associated behavioral information. Which individuals do not have behavioral information?
 
-3. We would like to combine the dataframes together, but we need to make sure the data is in the same order before we do this. Reorder the blood data to match the order of the IDs in the `behavior` dataframe. Save the reordered blood dataframe as `blood_reordered`. Then combine the dataframes `blood_reordered` and `behavior` using the `data.frame()` function.
+2. The samples lacking behavioral information correspond to individuals who opted out of the study after having their blood drawn. Subset the blood data to keep only samples that have behavioral information and save the dataframe back to the `blood` variable.
+
+3. We would like to combine the `blood` and `behavior` dataframes together, but first we need to make sure the data is in the same order. 
+	a. Take a look at each of the dataframes and manually identify the correct order for the blood dataframe such that it matches the order of IDs in the behavior dataframe. 
+	b. Reorder the blood data to match the order of the IDs in the behavior dataframe and save the reordered blood dataframe as `blood_reordered`. *Hint: you will need to have a vector of index values from a. to reorder.* Once you have created `blood_reordered` you can use the `all()` function as a sanity check to make sure it was done correctly. 
+	c. Combine the dataframes blood_reordered and behavior using the data.frame() function and save this to a new dataframe called `blood_behavior`. *Note: you will find that there are now two "ID" columns, this will help verify that you have reordered correctly.*
 ***
 
 ## The `match` function
