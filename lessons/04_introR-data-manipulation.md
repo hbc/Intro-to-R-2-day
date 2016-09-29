@@ -197,6 +197,8 @@ age > 50
 
 Returned is a vector of logical values the same length as age with TRUE and FALSE values indicating whether each element in the vector is greater than 50.
 
+![vector indices2](../img/logic.idx.png)
+
 We can use these logical vectors to select only the elements in a vector with TRUE values at the same position or index as in the logical vector.
 
 Create an index with logical operators to select all values in the `age` vector over 50 **or** `age` less than 18:
