@@ -272,6 +272,7 @@ it with this command:
   answer pointing to the misuse of your words rather than answering your
   question). You will also have more success if your question is about a base
   function rather than a specific package.
+* The [Bioconductor support site](https://support.bioconductor.org/). This is very useful and if you tag your post, there is a high likelihood of getting an answer from the developer.
 * If your question is about a specific package, see if there is a mailing list
   for it. Usually it's included in the DESCRIPTION file of the package that can
   be accessed using `packageDescription("name-of-package")`. You may also want
