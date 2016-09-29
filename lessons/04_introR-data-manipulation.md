@@ -157,6 +157,17 @@ age[1:4]
 
 Alternatively, if you wanted the reverse could try `4:1` for instance, and see what is returned. 
 
+***
+**Exercises** 
+
+1. Create a vector called alphabets with the following alphabets, C, D, X, U, F.
+2. Use the associated indices (and []) to 
+	* only display C, D and F
+	* display the alphabets in the opposite order (F, U, X, D, C)
+	* display all except X
+
+***
+
 #### Selecting using indexes with logical operators
 
 We can also use indexes with logical operators. Logical operators include greater than (>), less than (<), and equal to (==). A full list of logical operators in R is displayed below:
