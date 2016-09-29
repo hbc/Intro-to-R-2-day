@@ -161,7 +161,7 @@ Alternatively, if you wanted the reverse could try `4:1` for instance, and see w
 **Exercises** 
 
 1. Create a vector called alphabets with the following alphabets, C, D, X, U, F.
-2. Use the associated indices (and []) to 
+2. Use the associated indices (and [ ]) to 
 	* only display C, D and F
 	* display the alphabets in the opposite order (F, U, X, D, C)
 	* display all except X
