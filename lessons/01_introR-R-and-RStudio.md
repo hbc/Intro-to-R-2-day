@@ -48,7 +48,7 @@ RStudio is freely available open-source Integrated Development Environment (IDE)
 * Graphical user interface, not just a command prompt
 * Great learning tool 
 * Free for academic use
-* Program agnostic
+* Platform agnostic
 * Open source
 
 
