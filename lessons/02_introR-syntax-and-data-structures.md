@@ -201,7 +201,7 @@ Print the `combined` vector in the console, what looks different compared to the
 
 ### Factors
 
-A **factor** is a special type of vector that is used to **store categorical data**. Each unique category is referred to as a **factor level**. Factors are built on top of integer vectors such that each **factor level** is assigned an **integer value**, creating value-label pairs. 
+A **factor** is a special type of vector that is used to **store categorical data**. Each unique category is referred to as a **factor level** (i.e. category = level). Factors are built on top of integer vectors such that each **factor level** is assigned an **integer value**, creating value-label pairs. 
 
 ![factors](../img/factors_sm.png)
 
